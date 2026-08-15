@@ -46,7 +46,7 @@ const skills = [
 ];
 
 const achievements = [
-  { text: 'Solved 500+ Data Structures and Algorithms problems on LeetCode', icon: '🎯' },
+  { text: 'Engineered responsive Admin & Vendor Panels with Role-Based Access Control', icon: '⚡' },
   { text: 'Built and uploaded multiple full stack production web applications on GitHub', icon: '🚀' },
   { text: '6+ months professional experience as Junior Full Stack Developer at JT Brothers', icon: '💻' },
   { text: 'Integrated Razorpay payment gateway with secure order creation & signature verification', icon: '🔧' }

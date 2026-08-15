@@ -16,8 +16,7 @@ export default function HeroSection() {
   role: "Junior Full Stack Developer",
   company: "JT Brothers",
   stack: ["MongoDB", "Express.js", "React.js", "Node.js"],
-  mobile: "React Native",
-  dsaSolved: 500, // LeetCode
+  fullStackApps: "3+ Production",
   isHirable: true
 };
 
@@ -124,7 +123,6 @@ export async function solveProblem(challenge) {
                   { icon: Linkedin, href: 'https://linkedin.com/in/krishna-chandra-jha-423909321', label: 'LinkedIn', color: 'hover:text-cyan-400' },
                   { icon: Github, href: 'https://github.com/krish7323', label: 'GitHub', color: 'hover:text-emerald-400' },
                   { icon: Mail, href: 'mailto:jhasatya7323@gmail.com', label: 'Email', color: 'hover:text-teal-400' },
-                  { icon: Code2, href: 'https://leetcode.com', label: 'LeetCode', color: 'hover:text-amber-400' },
                 ].map((item, idx) => {
                   const Icon = item.icon;
                   return (
