@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Github, Linkedin, Mail, Code2, ArrowRight, Download, Copy, Check, Terminal, 
-  Sparkles, Layers, Cpu, ShieldCheck, Code, Server, Smartphone, Globe 
+  Github, Linkedin, Mail, ArrowRight, Download, Copy, Check, Terminal, 
+  Sparkles, Layers, Cpu, ShieldCheck, Code, Server, Smartphone, Globe, Activity 
 } from 'lucide-react';
 import TiltCard from '../TiltCard';
+import LiveApiPlayground from '../LiveApiPlayground';
 
 const roles = [
   {
@@ -42,7 +43,7 @@ const roles = [
 ];
 
 export default function HeroSection() {
-  const [activeTab, setActiveTab] = useState('code');
+  const [activeTab, setActiveTab] = useState('api'); // 'api' | 'code' | 'json' | 'arch'
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [copied, setCopied] = useState(false);
 
@@ -55,19 +56,18 @@ export default function HeroSection() {
   }, []);
 
   const currentRole = roles[currentRoleIndex];
-  const RoleIcon = currentRole.icon;
 
   const codeSnippets = {
     code: `const developer = {
   name: "Krishna Chandra Jha",
-  roles: ["Frontend", "Backend", "Full Stack", "Mobile"],
+  roles: ["Full Stack", "Frontend", "Backend", "Mobile App"],
   company: "JT Brothers",
   stack: {
     frontend: ["React.js", "Tailwind CSS", "HTML5", "CSS3", "JavaScript"],
     backend: ["Node.js", "Express.js", "REST APIs", "Middleware"],
     database: ["MongoDB", "SQL", "MySQL"],
     mobile: ["React Native", "Expo EAS"],
-    security: ["Razorpay", "RBAC", "JWT", "OTP Auth"]
+    security: ["Razorpay Integration", "RBAC", "JWT", "OTP Auth"]
   },
   isHirable: true
 };
@@ -97,16 +97,19 @@ export async function buildProduct(spec) {
   };
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(codeSnippets[activeTab]);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
+    if (codeSnippets[activeTab]) {
+      navigator.clipboard.writeText(codeSnippets[activeTab]);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    }
   };
 
   return (
     <section id="home" className="w-full py-16 lg:py-24 px-6 sm:px-12 lg:px-20 bg-[#09090b] relative overflow-hidden">
       
-      {/* Background glow spot */}
+      {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/5 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute bottom-1/4 right-10 w-[400px] h-[400px] bg-cyan-500/5 blur-[120px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto space-y-16">
         
@@ -121,7 +124,7 @@ export async function buildProduct(spec) {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Status Pill */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-mono">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-zinc-900/90 border border-zinc-800 text-zinc-300 text-xs font-mono shadow-sm">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_#10b981]" />
               <span>Available for Full Stack, Frontend & Backend Roles</span>
             </div>
@@ -156,8 +159,6 @@ export async function buildProduct(spec) {
                 </AnimatePresence>
               </div>
             </div>
-
-
 
             {/* Bio */}
             <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl">
@@ -238,9 +239,9 @@ export async function buildProduct(spec) {
                 </div>
 
                 {/* Floating interactive badge */}
-                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-zinc-900/95 border border-zinc-700/80 rounded-full px-4 py-1.5 shadow-xl backdrop-blur-md">
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-zinc-900/95 border border-zinc-700/80 rounded-full px-4 py-1.5 shadow-xl backdrop-blur-md whitespace-nowrap">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#10b981]" />
-                  <span className="text-[11px] text-zinc-200 font-bold uppercase tracking-wider">Full Stack & Mobile Dev</span>
+                  <span className="text-[11px] text-zinc-200 font-bold uppercase tracking-wider">Junior Full Stack Developer</span>
                 </div>
               </div>
             </TiltCard>
@@ -248,77 +249,85 @@ export async function buildProduct(spec) {
 
         </div>
 
-        {/* Interactive Live Code Sandbox / Terminal Preview */}
+        {/* Ultra Pro Interactive Developer Console & API Playground */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="w-full"
+          className="w-full space-y-4"
         >
-          <TiltCard maxTilt={4} scale={1.01} className="w-full">
-            <div className="w-full bg-[#0d0f17] border border-zinc-800/80 rounded-2xl p-5 sm:p-6 shadow-2xl space-y-4">
-              
-              {/* Terminal Window Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-4">
-                
-                {/* Tabs */}
-                <div className="flex items-center gap-2 overflow-x-auto">
-                  <div className="flex items-center gap-1.5 mr-3">
-                    <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
-                    <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
-                    <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
-                  </div>
-
-                  {[
-                    { id: 'code', label: 'Developer.js', icon: Terminal },
-                    { id: 'json', label: 'Roles_Spec.json', icon: Cpu },
-                    { id: 'arch', label: 'JTBrothers_Architecture.md', icon: Layers },
-                  ].map((tab) => {
-                    const TabIcon = tab.icon;
-                    return (
-                      <button
-                        key={tab.id}
-                        onClick={() => setActiveTab(tab.id)}
-                        className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium transition-all ${
-                          activeTab === tab.id
-                            ? 'bg-zinc-800 text-emerald-400 border border-zinc-700 shadow-sm'
-                            : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900'
-                        }`}
-                      >
-                        <TabIcon className="w-3.5 h-3.5" />
-                        <span>{tab.label}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-
-                {/* Copy Button */}
-                <button
-                  onClick={handleCopy}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300 hover:text-white hover:border-zinc-700 transition-all self-end sm:self-auto"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="w-3.5 h-3.5 text-emerald-400" />
-                      <span className="text-emerald-400">Copied!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3.5 h-3.5" />
-                      <span>Copy Snippet</span>
-                    </>
-                  )}
-                </button>
-              </div>
-
-              {/* Code display */}
-              <pre className="font-mono text-xs sm:text-sm text-zinc-300 p-3 overflow-x-auto leading-relaxed selection:bg-emerald-500/30 selection:text-white">
-                <code>{codeSnippets[activeTab]}</code>
-              </pre>
-
+          {/* View Switcher Tabs */}
+          <div className="flex flex-wrap items-center justify-between gap-3 bg-[#0d101d] border border-zinc-800/80 p-2 rounded-2xl">
+            <div className="flex items-center gap-2 overflow-x-auto">
+              {[
+                { id: 'api', label: '⚡ Interactive API Runner', icon: Activity },
+                { id: 'code', label: 'Developer.js', icon: Terminal },
+                { id: 'json', label: 'Roles_Spec.json', icon: Cpu },
+                { id: 'arch', label: 'JTBrothers_Architecture.md', icon: Layers },
+              ].map((tab) => {
+                const TabIcon = tab.icon;
+                const isSelected = activeTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all ${
+                      isSelected
+                        ? 'bg-emerald-500 text-black shadow-md shadow-emerald-500/20'
+                        : 'text-zinc-400 hover:text-white hover:bg-zinc-800/50'
+                    }`}
+                  >
+                    <TabIcon className="w-3.5 h-3.5" />
+                    <span>{tab.label}</span>
+                  </button>
+                );
+              })}
             </div>
-          </TiltCard>
+
+            {activeTab !== 'api' && (
+              <button
+                onClick={handleCopy}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300 hover:text-white transition-all self-end sm:self-auto"
+              >
+                {copied ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <span className="text-emerald-400">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5" />
+                    <span>Copy Code</span>
+                  </>
+                )}
+              </button>
+            )}
+          </div>
+
+          {/* Active View Container */}
+          {activeTab === 'api' ? (
+            <LiveApiPlayground />
+          ) : (
+            <TiltCard maxTilt={3} scale={1.01} className="w-full">
+              <div className="w-full bg-[#0d101d] border border-zinc-700/70 rounded-2xl p-5 sm:p-7 shadow-2xl space-y-3">
+                <div className="flex items-center justify-between border-b border-zinc-800/80 pb-3">
+                  <span className="text-xs font-mono text-emerald-400 font-bold">
+                    {activeTab === 'code' ? 'JavaScript ES6+' : activeTab === 'json' ? 'JSON Data Structure' : 'System Design Markdown'}
+                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                  </div>
+                </div>
+                <pre className="font-mono text-xs sm:text-sm text-zinc-300 p-2 overflow-x-auto leading-relaxed selection:bg-emerald-500/30 selection:text-white max-h-72">
+                  <code>{codeSnippets[activeTab]}</code>
+                </pre>
+              </div>
+            </TiltCard>
+          )}
+
         </motion.div>
 
       </div>
