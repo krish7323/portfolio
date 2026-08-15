@@ -1,48 +1,99 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Github, Linkedin, Mail, Code2, ArrowRight, Download, Copy, Check, Terminal, 
-  Sparkles, Layers, Cpu, ShieldCheck 
+  Sparkles, Layers, Cpu, ShieldCheck, Code, Server, Smartphone, Globe 
 } from 'lucide-react';
 import TiltCard from '../TiltCard';
 
+const roles = [
+  {
+    id: 'fullstack',
+    title: 'Full Stack Developer',
+    subtitle: 'MERN Stack & End-to-End Scalable Systems',
+    gradient: 'from-emerald-400 via-teal-300 to-cyan-400',
+    badgeBg: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400',
+    icon: Globe,
+  },
+  {
+    id: 'frontend',
+    title: 'Frontend Developer',
+    subtitle: 'React.js, Tailwind CSS & Fluid Responsive UI',
+    gradient: 'from-cyan-400 via-sky-300 to-blue-400',
+    badgeBg: 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400',
+    icon: Code,
+  },
+  {
+    id: 'backend',
+    title: 'Backend Developer',
+    subtitle: 'Node.js, Express.js, MongoDB & RESTful APIs',
+    gradient: 'from-purple-400 via-indigo-300 to-blue-400',
+    badgeBg: 'bg-purple-500/10 border-purple-500/30 text-purple-400',
+    icon: Server,
+  },
+  {
+    id: 'mobile',
+    title: 'Mobile App Developer',
+    subtitle: 'React Native & Cross-Platform Mobile Applications',
+    gradient: 'from-amber-400 via-orange-300 to-rose-400',
+    badgeBg: 'bg-amber-500/10 border-amber-500/30 text-amber-400',
+    icon: Smartphone,
+  }
+];
+
 export default function HeroSection() {
   const [activeTab, setActiveTab] = useState('code');
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [copied, setCopied] = useState(false);
+
+  // Auto-cycle through roles smoothly
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 3200);
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentRole = roles[currentRoleIndex];
+  const RoleIcon = currentRole.icon;
 
   const codeSnippets = {
     code: `const developer = {
   name: "Krishna Chandra Jha",
-  role: "Junior Full Stack Developer",
+  roles: ["Frontend", "Backend", "Full Stack", "Mobile"],
   company: "JT Brothers",
-  stack: ["MongoDB", "Express.js", "React.js", "Node.js"],
-  fullStackApps: "3+ Production",
+  stack: {
+    frontend: ["React.js", "Tailwind CSS", "HTML5", "CSS3", "JavaScript"],
+    backend: ["Node.js", "Express.js", "REST APIs", "Middleware"],
+    database: ["MongoDB", "SQL", "MySQL"],
+    mobile: ["React Native", "Expo EAS"],
+    security: ["Razorpay", "RBAC", "JWT", "OTP Auth"]
+  },
   isHirable: true
 };
 
-export async function solveProblem(challenge) {
-  const cleanCode = await developer.architect(challenge);
-  return cleanCode.deploy();
+export async function buildProduct(spec) {
+  const application = await developer.architect(spec);
+  return application.deploy();
 }`,
     json: `{
   "developer": "Krishna Chandra Jha",
-  "experience": "6+ Months Professional",
+  "specializations": {
+    "frontend": "React.js, Tailwind CSS, Responsive Web Design",
+    "backend": "Node.js, Express.js, REST API Architecture, MongoDB",
+    "fullstack": "End-to-End MERN Stack Applications & Admin Panels",
+    "mobile": "React Native Cross-Platform Apps"
+  },
   "currentRole": "Junior Full Stack Developer @ JT Brothers",
-  "specialties": [
-    "MERN Stack Development",
-    "RESTful API Architecture",
-    "Razorpay Payment Integration",
-    "Role-Based Access Control (RBAC)",
-    "React Native Mobile Apps"
-  ],
   "education": "MCA (Chandigarh University, 2023-2025)"
 }`,
-    arch: `// Architecture Workflow at JT Brothers
-1. Client UI -> React.js + Tailwind CSS (Responsive & Fluid)
-2. API Layer -> Node.js / Express.js (Service-Controller Pattern)
-3. Auth & RBAC -> JWT + OTP Authentication Modules
-4. Payment Gateway -> Razorpay (Webhook & Signature Verification)
-5. Database -> MongoDB Schemas with indexing for high throughput`
+    arch: `// Production Architecture Pattern at JT Brothers
+1. Frontend Layer -> React.js + Tailwind CSS + Responsive Modular State
+2. Mobile Layer   -> React Native (Cross-Platform Mobile Apps)
+3. API Gateway    -> Node.js / Express.js (Service-Controller-Route Pattern)
+4. Auth & RBAC    -> JWT + OTP-Based Verification & Role Permissions
+5. Payment Module -> Razorpay Webhook & Signature Verification
+6. Storage        -> MongoDB Schemas with Query Indexing & Aggregations`
   };
 
   const handleCopy = () => {
@@ -72,25 +123,65 @@ export async function solveProblem(challenge) {
             {/* Status Pill */}
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-mono">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_#10b981]" />
-              <span>Available for Full Stack & MERN Roles</span>
+              <span>Available for Full Stack, Frontend & Backend Roles</span>
             </div>
 
             {/* Headline */}
-            <div>
+            <div className="space-y-3">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.08] tracking-tight">
                 Hi, I'm <br />
                 <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
                   Krishna Chandra Jha
                 </span>
               </h1>
-              <p className="text-xl sm:text-2xl font-semibold text-zinc-300 mt-3">
-                Junior Full Stack Developer & MERN Specialist
-              </p>
+              
+              {/* Dynamic Animated Changing Role */}
+              <div className="h-16 sm:h-14 flex items-center justify-center lg:justify-start">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentRole.id}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -15 }}
+                    transition={{ duration: 0.35, ease: 'easeOut' }}
+                    className="flex flex-col sm:flex-row items-center gap-2.5"
+                  >
+                    <span className={`text-2xl sm:text-3xl font-black bg-gradient-to-r ${currentRole.gradient} bg-clip-text text-transparent`}>
+                      {currentRole.title}
+                    </span>
+                    <span className={`px-3 py-1 rounded-full text-xs font-mono font-semibold border ${currentRole.badgeBg}`}>
+                      {currentRole.subtitle.split('&')[0].trim()}
+                    </span>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+
+            {/* Interactive Role Switcher Pills */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
+              {roles.map((role, idx) => {
+                const IconComp = role.icon;
+                const isActive = currentRoleIndex === idx;
+                return (
+                  <button
+                    key={role.id}
+                    onClick={() => setCurrentRoleIndex(idx)}
+                    className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                      isActive
+                        ? 'bg-zinc-800 text-white border border-zinc-600 shadow-md scale-105'
+                        : 'bg-zinc-900/60 text-zinc-500 hover:text-zinc-300 border border-zinc-800'
+                    }`}
+                  >
+                    <IconComp className={`w-3.5 h-3.5 ${isActive ? 'text-emerald-400' : 'text-zinc-500'}`} />
+                    <span>{role.title}</span>
+                  </button>
+                );
+              })}
             </div>
 
             {/* Bio */}
             <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl">
-              I build scalable, high-performance web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js) and React Native. Currently contributing at <strong className="text-emerald-400 font-semibold">JT Brothers</strong>.
+              I engineer end-to-end full-stack web and mobile applications using the <strong className="text-zinc-200">MERN stack</strong> (MongoDB, Express.js, React.js, Node.js) and <strong className="text-zinc-200">React Native</strong>. Currently contributing at <strong className="text-emerald-400 font-semibold">JT Brothers</strong>.
             </p>
             
             {/* Interactive CTA Buttons */}
@@ -169,7 +260,7 @@ export async function solveProblem(challenge) {
                 {/* Floating interactive badge */}
                 <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-zinc-900/95 border border-zinc-700/80 rounded-full px-4 py-1.5 shadow-xl backdrop-blur-md">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#10b981]" />
-                  <span className="text-[11px] text-zinc-200 font-bold uppercase tracking-wider">Junior Full Stack Dev</span>
+                  <span className="text-[11px] text-zinc-200 font-bold uppercase tracking-wider">Full Stack & Mobile Dev</span>
                 </div>
               </div>
             </TiltCard>
@@ -201,7 +292,7 @@ export async function solveProblem(challenge) {
 
                   {[
                     { id: 'code', label: 'Developer.js', icon: Terminal },
-                    { id: 'json', label: 'Profile.json', icon: Cpu },
+                    { id: 'json', label: 'Roles_Spec.json', icon: Cpu },
                     { id: 'arch', label: 'JTBrothers_Architecture.md', icon: Layers },
                   ].map((tab) => {
                     const TabIcon = tab.icon;
