@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Chandra Jha - Web Developer (LimeTray)</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 11mm 14mm;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            color: #1e293b;
+            line-height: 1.40;
+            font-size: 12.8px;
+            background: #fff;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 20px 28px;
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #0284c7;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 23px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #0f172a;
+            text-transform: uppercase;
+        }
+        .subtitle {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0284c7;
+            margin-top: 2px;
+            margin-bottom: 5px;
+        }
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            font-size: 12px;
+            color: #475569;
+        }
+        .contact-bar a {
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        h2 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #0f172a;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 2.5px;
+            margin-top: 11px;
+            margin-bottom: 5px;
+        }
+        p {
+            margin-bottom: 4px;
+            text-align: justify;
+        }
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5px;
+            font-size: 12.2px;
+        }
+        .skills-grid p {
+            margin-bottom: 0;
+        }
+        .skills-grid strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
+        .job-entry, .project-entry {
+            margin-bottom: 6px;
+        }
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1.5px;
+        }
+        .entry-title {
+            font-weight: 700;
+            font-size: 12.8px;
+            color: #0f172a;
+        }
+        .entry-subtitle {
+            font-style: italic;
+            color: #475569;
+            font-size: 11.8px;
+        }
+        .entry-date {
+            font-size: 11.8px;
+            color: #64748b;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        ul {
+            padding-left: 17px;
+            margin-top: 2px;
+            margin-bottom: 3px;
+        }
+        li {
+            margin-bottom: 2px;
+            font-size: 12.2px;
+        }
+        li strong {
+            color: #0f172a;
+        }
+        .education-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2px;
+            font-size: 12.2px;
+        }
+        @media print {
+            body {
+                padding: 0;
+                max-width: 100%;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        .print-btn-wrap {
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .print-btn {
+            background-color: #0284c7;
+            color: #fff;
+            padding: 7px 16px;
+            font-size: 12.5px;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .print-btn:hover {
+            background-color: #0369a1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="print-btn-wrap no-print">
+        <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    </div>
+
+    <header>
+        <h1>Krishna Chandra Jha</h1>
+        <div class="subtitle">Web Developer (Core PHP &bull; JavaScript &bull; MySQL &bull; Frontend)</div>
+        <div class="contact-bar">
+            <span>📍 Chandigarh, India (Work From Office)</span>
+            <span>✉️ <a href="mailto:jhasatya7323@gmail.com">jhasatya7323@gmail.com</a></span>
+            <span>📞 +91-7323000894</span>
+            <span>🔗 <a href="https://github.com/krish7323" target="_blank">github.com/krish7323</a></span>
+            <span>🔗 <a href="https://linkedin.com/in/krishna-chandra-jha-423909321" target="_blank">linkedin.com/in/krishna-chandra-jha</a></span>
+        </div>
+    </header>
+
+    <h2>Professional Summary</h2>
+    <p>
+        Passionate and detail-oriented <strong>Web Developer</strong> with hands-on professional experience developing responsive, user-friendly web applications, integrating custom frontend interfaces with backend systems, and managing relational databases. Proficient in <strong>JavaScript (ES6+), Core PHP, jQuery, HTML5, CSS3, Bootstrap, Tailwind CSS, MySQL, and RESTful APIs</strong>. Experienced in converting Figma wireframes into pixel-perfect responsive layouts, building modular code, handling AJAX/JSON data streams, and optimizing web performance and cross-browser compatibility. Holds a <strong>Master of Computer Applications (MCA)</strong> from Chandigarh University with strong analytical problem-solving skills demonstrated through <strong>500+ LeetCode DSA problems solved</strong>. <strong>Chandigarh resident available immediately for work-from-office roles.</strong>
+    </p>
+
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        <p><strong>Core Web & Frontend:</strong> JavaScript (ES6+), jQuery, HTML5 (Semantic), CSS3, React.js, Bootstrap, Tailwind CSS, Responsive Web Design, Mobile-First Layouts, Figma to Code</p>
+        <p><strong>Backend & Server-Side Development:</strong> Core PHP, CodeIgniter / MVC Architecture Concepts, RESTful API Integration, AJAX, JSON, Node.js Fundamentals</p>
+        <p><strong>Databases & Data Operations:</strong> MySQL, SQL Queries, Relational Schema Design, CRUD Operations, Database Indexing, Data Sanitization & Prepared Statements</p>
+        <p><strong>Quality, Testing & Optimization:</strong> Cross-Browser Compatibility, Mobile Optimization, Speed & Performance Tuning, Debugging via Browser DevTools, Basic Web Security & Input Validation</p>
+        <p><strong>Tools & Workflow:</strong> Git, GitHub, VS Code, Postman, npm, Vite, Agile / Scrum Methodology</p>
+    </div>
+
+    <h2>Work Experience</h2>
+    <div class="job-entry">
+        <div class="entry-header">
+            <div>
+                <span class="entry-title">Web & Software Developer</span> &mdash; 
+                <span class="entry-subtitle">JT Brothers, India</span>
+            </div>
+            <span class="entry-date">Jan 2026 &ndash; Present</span>
+        </div>
+        <ul>
+            <li>Developed and maintained responsive web applications and customer portals using <strong>JavaScript, HTML5, CSS3, Tailwind CSS/Bootstrap, and Core PHP backend concepts</strong>.</li>
+            <li>Translated UI/UX designs and Figma mockups into clean, accessible, and cross-browser compatible frontend code.</li>
+            <li>Built clean, reusable, and maintainable code adhering to industry best practices and modular architecture.</li>
+            <li>Integrated frontend user interfaces with backend <strong>RESTful APIs</strong> and database services using asynchronous <strong>AJAX and JSON</strong> requests.</li>
+            <li>Managed <strong>MySQL</strong> database operations, ensuring data integrity, optimized query execution, and secure user inputs.</li>
+            <li>Troubleshot, debugged, and resolved cross-browser rendering inconsistencies and performance bottlenecks.</li>
+            <li>Collaborated closely with cross-functional teams in an Agile setup utilizing <strong>Git and GitHub</strong> for version control, code reviews, and sprint delivery.</li>
+        </ul>
+    </div>
+
+    <h2>Key Web Projects</h2>
+    <div class="project-entry">
+        <div class="entry-header">
+            <div>
+                <span class="entry-title">Viz Travels – Commercial Booking & Ordering Web Platform</span>
+                <div class="entry-subtitle">Tech: JavaScript, Core Web Stack, REST APIs, MySQL/MongoDB, Razorpay</div>
+            </div>
+        </div>
+        <ul>
+            <li>Developed a full-featured commercial web application featuring interactive service catalogs, dynamic search/filter controls, and multi-step reservation workflows.</li>
+            <li>Built responsive, mobile-first frontend views ensuring seamless visual consistency across mobile, tablet, and desktop devices.</li>
+            <li>Integrated secure payment gateway processing (Razorpay) and dynamic AJAX API endpoints for real-time transaction updates.</li>
+            <li>Optimized asset delivery, image loading, and DOM rendering for fast initial page load times.</li>
+        </ul>
+    </div>
+
+    <div class="project-entry">
+        <div class="entry-header">
+            <div>
+                <span class="entry-title">Administrative Employee & Operations Management Portal</span>
+                <div class="entry-subtitle">Tech: JavaScript, Core PHP / REST APIs, MySQL, HTML5/CSS3, JWT</div>
+            </div>
+        </div>
+        <ul>
+            <li>Built an administrative management portal featuring complete CRUD functionality, dynamic data tables, and search/sort operations.</li>
+            <li>Designed relational database schemas in <strong>MySQL</strong> for tracking records, status updates, and role-based permissions.</li>
+            <li>Implemented token-based session handling and form validations to prevent unauthorized data access.</li>
+        </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div class="education-row">
+        <div><strong>Master of Computer Applications (MCA)</strong> &mdash; Chandigarh University, Mohali</div>
+        <div class="entry-date">2023 &ndash; 2025</div>
+    </div>
+    <div class="education-row">
+        <div><strong>B.Sc. (Hons) Mathematics</strong> &mdash; J.N. College, Darbhanga</div>
+        <div class="entry-date">2019 &ndash; 2023</div>
+    </div>
+
+    <h2>Key Strengths & Highlights</h2>
+    <ul>
+        <li><strong>500+ LeetCode DSA Problems Solved:</strong> Exceptional problem-solving skills, algorithmic efficiency, and rapid debugging abilities.</li>
+        <li><strong>Chandigarh Resident & Immediate Joiner:</strong> Residing locally in Chandigarh with zero relocation friction; fully available for immediate Work-from-Office joining.</li>
+    </ul>
+
+</body>
+</html>

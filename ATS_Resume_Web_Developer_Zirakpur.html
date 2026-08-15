@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Chandra Jha - Web Developer Resume</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 12mm 15mm;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            color: #1e293b;
+            line-height: 1.42;
+            font-size: 13px;
+            background: #fff;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 24px 30px;
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #0d9488;
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #0f172a;
+            text-transform: uppercase;
+        }
+        .subtitle {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: #0d9488;
+            margin-top: 2px;
+            margin-bottom: 6px;
+        }
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            font-size: 12.5px;
+            color: #475569;
+        }
+        .contact-bar a {
+            color: #0d9488;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        h2 {
+            font-size: 13.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #0f172a;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 3px;
+            margin-top: 13px;
+            margin-bottom: 6px;
+        }
+        p {
+            margin-bottom: 5px;
+            text-align: justify;
+        }
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 12.5px;
+        }
+        .skills-grid p {
+            margin-bottom: 0;
+        }
+        .skills-grid strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
+        .job-entry, .project-entry {
+            margin-bottom: 8px;
+        }
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+        .entry-title {
+            font-weight: 700;
+            font-size: 13px;
+            color: #0f172a;
+        }
+        .entry-subtitle {
+            font-style: italic;
+            color: #475569;
+            font-size: 12px;
+        }
+        .entry-date {
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        ul {
+            padding-left: 18px;
+            margin-top: 2px;
+            margin-bottom: 4px;
+        }
+        li {
+            margin-bottom: 2.5px;
+            font-size: 12.5px;
+        }
+        li strong {
+            color: #0f172a;
+        }
+        .education-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3px;
+            font-size: 12.5px;
+        }
+        @media print {
+            body {
+                padding: 0;
+                max-width: 100%;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        .print-btn-wrap {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .print-btn {
+            background-color: #0d9488;
+            color: #fff;
+            padding: 8px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .print-btn:hover {
+            background-color: #0f766e;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="print-btn-wrap no-print">
+        <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    </div>
+
+    <header>
+        <h1>Krishna Chandra Jha</h1>
+        <div class="subtitle">Web Developer & Full Stack Engineer</div>
+        <div class="contact-bar">
+            <span>📍 Zirakpur / Tricity Area</span>
+            <span>✉️ <a href="mailto:jhasatya7323@gmail.com">jhasatya7323@gmail.com</a></span>
+            <span>📞 +91-7323000894</span>
+            <span>🔗 <a href="https://github.com/krish7323" target="_blank">github.com/krish7323</a></span>
+            <span>🔗 <a href="https://linkedin.com/in/krishna-chandra-jha-423909321" target="_blank">linkedin.com/in/krishna-chandra-jha</a></span>
+        </div>
+    </header>
+
+    <h2>Professional Summary</h2>
+    <p>
+        Versatile and algorithmically strong <strong>Web Developer & Full Stack Engineer</strong> with hands-on professional experience building dynamic, data-driven web applications, multi-tier user portals, and automated transaction workflows. Proficient in <strong>JavaScript (ES6+), React.js, Node.js, Express.js, MongoDB, and SQL/MySQL</strong>. Skilled in developing hierarchical tree/genealogy data structures, multi-level commission logic, role-based access control (RBAC), and secure payment gateway integrations (<strong>Razorpay</strong>). Holds a <strong>Master of Computer Applications (MCA)</strong> degree from Chandigarh University with <strong>500+ LeetCode DSA problems solved</strong> (extensive mastery of recursion, graphs, trees, and matrix algorithms). <strong>Local Tricity resident available immediately for in-person work in Zirakpur.</strong>
+    </p>
+
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        <p><strong>Web & Frontend Development:</strong> JavaScript (ES6+), React.js (v18+, Hooks, Context API), HTML5, CSS3, Tailwind CSS, Responsive Web Design, Figma to Code</p>
+        <p><strong>Backend & Logic Engineering:</strong> Node.js, Express.js, RESTful API Architecture, Service-Controller-Route Pattern, Hierarchical / Tree Data Structures, Calculation Engines</p>
+        <p><strong>Database & Data Modeling:</strong> MongoDB (NoSQL, Aggregations), SQL, MySQL, Relational Schema Design, Transactional Integrity & Indexing</p>
+        <p><strong>Authentication & Security:</strong> JSON Web Tokens (JWT), Multi-Tenant Role-Based Access Control (Admin/Vendor/Member Tiers), OTP Verification, Secure Sessions</p>
+        <p><strong>Payment & Third-Party APIs:</strong> Razorpay Payment Gateway Integration, Webhooks, E-Wallet Flow Concepts, Axios, Postman</p>
+        <p><strong>Optimization & Version Control:</strong> Application Speed Optimization, Database Query Tuning, Cross-Browser Compatibility, Git, GitHub, Agile/Scrum</p>
+    </div>
+
+    <h2>Work Experience</h2>
+    <div class="job-entry">
+        <div class="entry-header">
+            <div>
+                <span class="entry-title">Web & Full Stack Developer</span> &mdash; 
+                <span class="entry-subtitle">JT Brothers, India</span>
+            </div>
+            <span class="entry-date">Jan 2026 &ndash; Present</span>
+        </div>
+        <ul>
+            <li>Architected and developed responsive full-stack web applications and multi-tier portal systems utilizing <strong>React.js, Node.js, and Express.js</strong>.</li>
+            <li>Designed and implemented complex backend business logic including user hierarchy management, tiered permission levels, and automated calculation endpoints.</li>
+            <li>Integrated third-party payment gateways (<strong>Razorpay</strong>) with webhook-driven transaction verification and automatic ledger updates.</li>
+            <li>Engineered schema designs and aggregation pipelines across <strong>MongoDB and SQL</strong>, ensuring fast query responses for nested user and order records.</li>
+            <li>Configured multi-tier <strong>Role-Based Access Control (RBAC)</strong> and <strong>JWT authentication</strong> for admin, manager, and end-user access levels.</li>
+            <li>Collaborated in an Agile development environment utilizing <strong>Git/GitHub</strong> for version control, code reviews, and feature deployment.</li>
+        </ul>
+    </div>
+
+    <h2>Key Projects</h2>
+    <div class="project-entry">
+        <div class="entry-header">
+            <div>
+                <span class="entry-title">Viz Travels – Multi-Tier Booking & Transaction Platform</span>
+                <div class="entry-subtitle">Tech: React.js, Node.js, Express.js, MongoDB, Tailwind CSS, Razorpay</div>
+            </div>
+        </div>
+        <ul>
+            <li>Developed an end-to-end commercial web portal featuring dynamic catalogs, multi-step booking workflows, and vendor management modules.</li>
+            <li>Implemented real-time transaction processing with Razorpay, handling order generation, payment confirmation, and automated invoice delivery.</li>
+            <li>Optimized database indexing and search algorithms for fast search and data retrieval across large catalog datasets.</li>
+        </ul>
+    </div>
+
+    <div class="project-entry">
+        <div class="entry-header">
+            <div>
+                <span class="entry-title">Enterprise Multi-Role Employee & Member Management Portal</span>
+                <div class="entry-subtitle">Tech: React.js, Node.js, Express.js, MongoDB, JWT Authentication</div>
+            </div>
+        </div>
+        <ul>
+            <li>Built a multi-tenant dashboard featuring full CRUD operations, hierarchical organization views, and real-time performance metrics.</li>
+            <li>Implemented token-based session management, route protection, and tiered access controls tailored for multi-level user privileges.</li>
+        </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div class="education-row">
+        <div><strong>Master of Computer Applications (MCA)</strong> &mdash; Chandigarh University</div>
+        <div class="entry-date">2023 &ndash; 2025</div>
+    </div>
+    <div class="education-row">
+        <div><strong>B.Sc. (Hons) Mathematics</strong> &mdash; J.N. College, Darbhanga</div>
+        <div class="entry-date">2019 &ndash; 2023</div>
+    </div>
+
+    <h2>Key Highlights & Achievements</h2>
+    <ul>
+        <li><strong>500+ LeetCode DSA Problems Solved:</strong> High-level problem-solving mastery in trees, graphs, recursive algorithms, dynamic programming, and computational logic.</li>
+        <li><strong>Local Tricity Resident:</strong> Seamless daily commute to Zirakpur with immediate availability for in-person onboarding.</li>
+    </ul>
+
+</body>
+</html>
