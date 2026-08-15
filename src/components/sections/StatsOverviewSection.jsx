@@ -40,7 +40,7 @@ export default function StatsOverviewSection() {
   const stats = [
     { value: 6, suffix: '+', label: 'Months Professional Experience', desc: 'At JT Brothers working on full-stack web applications' },
     { value: 20, suffix: '+', label: 'Completed Projects & Modules', desc: 'Full-stack applications, admin panels, and REST APIs' },
-    { value: 3, suffix: '+', label: 'Production Web Applications', desc: 'Deployed full-stack systems with MongoDB & payment flows' },
+    { value: 5, suffix: '+', label: 'Production Web & Mobile Apps', desc: 'Deployed React Native, MERN & FinTech platforms' },
     { value: 10, suffix: '+', label: 'Core Full Stack Technologies', desc: 'MERN Stack, React Native, REST APIs, Razorpay & RBAC' }
   ];
 

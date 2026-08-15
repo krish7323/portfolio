@@ -1,16 +1,32 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, Sparkles, Layers, ShieldCheck, Database, X, Code, CheckCircle2 } from 'lucide-react';
+import { Github, ExternalLink, Sparkles, Layers, ShieldCheck, Database, X, Code, CheckCircle2, Smartphone, TrendingUp, Compass, Film, Users } from 'lucide-react';
 import TiltCard from '../TiltCard';
 
 const projects = [
   {
-    id: 'viz-travels',
-    title: 'Viz Travels – Tour & Travel Booking Platform',
+    id: 'fluencer-app',
+    title: 'Fluencer App – Influencer & Brand Campaign Platform',
+    category: 'mobile',
+    categoryLabel: 'Mobile & Web App',
+    typeColor: 'bg-indigo-500',
+    description: 'A full-stack React Native mobile & web platform for influencer marketing. Features brand campaign management, dynamic live stats tracking, OTP phone verification, EAS build deployment, and showcase carousels.',
+    highlights: [
+      'Engineered cross-platform mobile experience with React Native & Expo EAS build distribution',
+      'Built dynamic brand campaign live stats, tasks, and submission review workflows for brands and creators',
+      'Implemented secure 10-digit mobile OTP authentication with robust backend scheme validations',
+      'Integrated React SSR, routing for web publishing, and VSL showcase carousel media displays'
+    ],
+    tags: ['React Native', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'EAS Build', 'OTP Auth'],
+    link: 'https://github.com/rajammy1234567-ai/Fluencer_App'
+  },
+  {
+    id: 'tour-website',
+    title: 'Viz Travels (TourWebsite) – Travel Booking Platform',
     category: 'fullstack',
     categoryLabel: 'Full Stack',
     typeColor: 'bg-emerald-500',
-    description: 'Built and deployed a full-stack tour and travel booking website with a multi-step booking flow. Developed an Admin Panel for managing tours, bookings, and users, and a Vendor Panel for vendors to manage their own listings. Integrated Razorpay payment gateway with secure order creation and signature verification.',
+    description: 'Built and deployed a full-stack tour and travel booking website with a multi-step booking flow. Developed an Admin Panel for managing tours, bookings, and users, and a Vendor Panel for partner listing management with Razorpay payment integration.',
     highlights: [
       'Engineered Admin & Vendor Panels with role-based permissions (RBAC)',
       'Integrated Razorpay payment gateway with order creation & signature verification',
@@ -18,20 +34,36 @@ const projects = [
       'Implemented OTP-based authentication & indexed MongoDB query architecture'
     ],
     tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Razorpay', 'Tailwind CSS'],
-    link: 'https://github.com/krish7323'
+    link: 'https://github.com/rajammy1234567-ai/TourWebsite'
+  },
+  {
+    id: 'mirror-trade',
+    title: 'MirrorTrade – Copy Trading & Financial Platform',
+    category: 'fullstack',
+    categoryLabel: 'FinTech Platform',
+    typeColor: 'bg-cyan-500',
+    description: 'A high-performance trading platform enabling automated strategy replication, real-time portfolio analytics, position tracking, and secure order execution.',
+    highlights: [
+      'Engineered real-time trade mirror architecture and multi-account portfolio performance analytics',
+      'Implemented secure user authentication, risk management parameters, and position tracking',
+      'Designed high-throughput REST APIs and data pipelines for live market metrics',
+      'Built clean financial dashboard with responsive data grids and transaction history'
+    ],
+    tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'REST APIs', 'Tailwind CSS'],
+    link: 'https://github.com/rajammy1234567-ai/MirrorTrade'
   },
   {
     id: 'ott-backend',
-    title: 'OTT Streaming App – Backend',
+    title: 'OTT Streaming App – Backend Infrastructure',
     category: 'backend',
     categoryLabel: 'Backend & APIs',
-    typeColor: 'bg-cyan-500',
-    description: 'Built the backend and REST APIs for an OTT (video streaming) application, handling user accounts and content data. Implemented authentication and authorization for secure access to streaming content. Designed MongoDB schemas to manage users, content catalog, and subscription-style data.',
+    typeColor: 'bg-teal-500',
+    description: 'Built the backend and REST APIs for an OTT (video streaming) application, handling user accounts and content data. Implemented authentication and authorization for secure access to streaming content.',
     highlights: [
       'High-throughput video streaming content catalog RESTful APIs',
       'Token-based authentication & route authorization middleware',
       'MongoDB schemas optimized for low-latency search & categorization',
-      'Secure subscription status check controllers'
+      'Modular middleware controllers for secure streaming subscriptions'
     ],
     tags: ['Node.js', 'Express.js', 'MongoDB', 'REST APIs', 'JWT Auth'],
     link: 'https://github.com/krish7323'
@@ -41,7 +73,7 @@ const projects = [
     title: 'Employee Management System',
     category: 'fullstack',
     categoryLabel: 'Full Stack',
-    typeColor: 'bg-teal-500',
+    typeColor: 'bg-amber-500',
     description: 'Developed a full-stack web application to manage employee records with CRUD operations and role-based access control. Built RESTful APIs for efficient backend communication.',
     highlights: [
       'Complete CRUD operations for multi-department employee directories',
@@ -60,7 +92,12 @@ export default function ProjectsSection() {
 
   const filteredProjects = filter === 'all' 
     ? projects 
-    : projects.filter(p => p.category === filter);
+    : projects.filter(p => {
+        if (filter === 'fullstack') return p.category === 'fullstack';
+        if (filter === 'mobile') return p.category === 'mobile';
+        if (filter === 'backend') return p.category === 'backend';
+        return true;
+      });
 
   return (
     <section id="projects" className="py-20 px-6 sm:px-12 lg:px-20 bg-[#09090b]">
@@ -76,15 +113,16 @@ export default function ProjectsSection() {
               Production Projects
             </h2>
             <p className="text-zinc-400 text-sm mt-1 max-w-lg">
-              Full-stack applications and scalable backend architectures built by Krishna Chandra Jha.
+              Mobile apps, full-stack platforms, and backend architectures built by Krishna Chandra Jha.
             </p>
           </div>
 
           {/* Filter Pills */}
-          <div className="flex items-center gap-2 bg-[#0d0f17] border border-zinc-800 p-1.5 rounded-xl self-start sm:self-auto">
+          <div className="flex flex-wrap items-center gap-2 bg-[#0d0f17] border border-zinc-800 p-1.5 rounded-xl self-start sm:self-auto">
             {[
               { id: 'all', label: 'All Projects' },
-              { id: 'fullstack', label: 'Full Stack' },
+              { id: 'mobile', label: 'Mobile App' },
+              { id: 'fullstack', label: 'Full Stack Web' },
               { id: 'backend', label: 'Backend & APIs' },
             ].map((tab) => (
               <button
@@ -190,7 +228,7 @@ export default function ProjectsSection() {
                           data-cursor="GitHub"
                           className="text-xs font-mono text-zinc-400 hover:text-white transition-colors"
                         >
-                          github.com/krish7323
+                          Source Code →
                         </a>
                       </div>
                     </div>
@@ -235,7 +273,7 @@ export default function ProjectsSection() {
 
               <div className="space-y-3">
                 <h4 className="text-xs font-mono uppercase text-zinc-400 font-bold tracking-wider">
-                  Technical Architecture & Key Modules:
+                  Technical Architecture & Key Highlights:
                 </h4>
                 <div className="space-y-2">
                   {selectedProject.highlights.map((h, i) => (
@@ -268,7 +306,7 @@ export default function ProjectsSection() {
                   className="px-6 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs flex items-center gap-2 shadow-lg shadow-emerald-500/20"
                 >
                   <Github className="w-4 h-4" />
-                  <span>View on GitHub</span>
+                  <span>View Repository on GitHub</span>
                 </a>
               </div>
             </motion.div>
