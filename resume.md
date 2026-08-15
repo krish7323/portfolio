@@ -1,6 +1,6 @@
 # Krishna Chandra Jha
 **Email:** jhasatya7323@gmail.com | **Phone:** +91-7323000894  
-**GitHub:** [github.com/krish7323](https://github.com/krish7323) | **LinkedIn:** [linkedin.com/in/krishna-chandra-jha-423909321](https://linkedin.com/in/krishna-chandra-jha-423909321)
+**Portfolio:** [krishnachandrajha.netlify.app](https://krishnachandrajha.netlify.app) | **GitHub:** [github.com/krish7323](https://github.com/krish7323) | **LinkedIn:** [linkedin.com/in/krishna-chandra-jha-423909321](https://linkedin.com/in/krishna-chandra-jha-423909321)
 
 ---
 
