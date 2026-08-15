@@ -157,27 +157,7 @@ export async function buildProduct(spec) {
               </div>
             </div>
 
-            {/* Interactive Role Switcher Pills */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
-              {roles.map((role, idx) => {
-                const IconComp = role.icon;
-                const isActive = currentRoleIndex === idx;
-                return (
-                  <button
-                    key={role.id}
-                    onClick={() => setCurrentRoleIndex(idx)}
-                    className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
-                      isActive
-                        ? 'bg-zinc-800 text-white border border-zinc-600 shadow-md scale-105'
-                        : 'bg-zinc-900/60 text-zinc-500 hover:text-zinc-300 border border-zinc-800'
-                    }`}
-                  >
-                    <IconComp className={`w-3.5 h-3.5 ${isActive ? 'text-emerald-400' : 'text-zinc-500'}`} />
-                    <span>{role.title}</span>
-                  </button>
-                );
-              })}
-            </div>
+
 
             {/* Bio */}
             <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl">
