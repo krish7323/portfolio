@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 
-export default function TiltCard({ children, className = '', maxTilt = 10, scale = 1.02 }) {
+export default function TiltCard({ children, className = '', maxTilt = 8, scale = 1.02 }) {
   const cardRef = useRef(null);
   const [transform, setTransform] = useState('perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)');
-  const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
+  const [spotlight, setSpotlight] = useState({ x: 50, y: 50, opacity: 0 });
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
@@ -17,16 +17,16 @@ export default function TiltCard({ children, className = '', maxTilt = 10, scale
     const rotateY = ((x - centerX) / centerX) * maxTilt;
 
     setTransform(`perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(${scale}, ${scale}, ${scale})`);
-    setGlare({
+    setSpotlight({
       x: (x / rect.width) * 100,
       y: (y / rect.height) * 100,
-      opacity: 0.15,
+      opacity: 1,
     });
   };
 
   const handleMouseLeave = () => {
     setTransform('perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)');
-    setGlare((prev) => ({ ...prev, opacity: 0 }));
+    setSpotlight((prev) => ({ ...prev, opacity: 0 }));
   };
 
   return (
@@ -34,18 +34,27 @@ export default function TiltCard({ children, className = '', maxTilt = 10, scale
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden transition-transform duration-200 ease-out will-change-transform ${className}`}
+      className={`relative overflow-hidden transition-all duration-300 ease-out will-change-transform rounded-2xl ${className}`}
       style={{
         transform,
         transformStyle: 'preserve-3d',
       }}
     >
-      {/* Specular glare reflection on hover */}
+      {/* Dynamic Cursor Spotlight Border Glow */}
+      <div
+        className="pointer-events-none absolute -inset-px rounded-2xl transition-opacity duration-300 z-20"
+        style={{
+          background: `radial-gradient(400px circle at ${spotlight.x}% ${spotlight.y}%, rgba(16, 185, 129, 0.25), transparent 70%)`,
+          opacity: spotlight.opacity,
+        }}
+      />
+
+      {/* Internal Glare sheen */}
       <div
         className="pointer-events-none absolute inset-0 transition-opacity duration-300 z-10"
         style={{
-          background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(255, 255, 255, 0.25) 0%, transparent 65%)`,
-          opacity: glare.opacity,
+          background: `radial-gradient(circle at ${spotlight.x}% ${spotlight.y}%, rgba(255, 255, 255, 0.08) 0%, transparent 60%)`,
+          opacity: spotlight.opacity,
         }}
       />
       {children}
