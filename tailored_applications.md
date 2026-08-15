@@ -1,8 +1,7 @@
-# Quick-Apply Action Kit for Krishna Chandra Jha
-
 **Candidate:** Krishna Chandra Jha  
 **Target Roles:** MERN Stack Developer / React Developer / Node.js Developer / Full Stack Developer (0–2 YOE)  
 **Email:** jhasatya7323@gmail.com | **Phone:** +91-7323000894  
+**Portfolio:** https://portfolio-ashen-alpha-dv0whhsamo.vercel.app/  
 **GitHub:** https://github.com/krish7323 | **LinkedIn:** https://linkedin.com/in/krishna-chandra-jha-423909321  
 
 ---

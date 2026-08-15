@@ -1,7 +1,7 @@
 # KRISHNA CHANDRA JHA
 **Full Stack Developer (MERN Stack)**  
 Email: jhasatya7323@gmail.com | Phone: +91-7323000894  
-GitHub: github.com/krish7323 | LinkedIn: linkedin.com/in/krishna-chandra-jha-423909321 | Location: India  
+Portfolio: https://portfolio-ashen-alpha-dv0whhsamo.vercel.app/ | GitHub: github.com/krish7323 | LinkedIn: linkedin.com/in/krishna-chandra-jha-423909321 | Location: India  
 
 ---
 

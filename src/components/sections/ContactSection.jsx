@@ -239,7 +239,7 @@ export default function ContactSection() {
                         <input
                           type="text"
                           required
-                          placeholder="e.g. Scott Ownbey"
+                          placeholder="Your name"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           className="w-full bg-zinc-900/60 border border-zinc-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-zinc-600 focus:border-emerald-500 focus:outline-none transition-colors"
@@ -252,7 +252,7 @@ export default function ContactSection() {
                         <input
                           type="email"
                           required
-                          placeholder="name@company.com"
+                          placeholder="Your email address"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           className="w-full bg-zinc-900/60 border border-zinc-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-zinc-600 focus:border-emerald-500 focus:outline-none transition-colors"
@@ -267,7 +267,7 @@ export default function ContactSection() {
                       <input
                         type="text"
                         required
-                        placeholder="e.g. Junior Full Stack / MERN Opportunity"
+                        placeholder="Subject of your message"
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                         className="w-full bg-zinc-900/60 border border-zinc-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-zinc-600 focus:border-emerald-500 focus:outline-none transition-colors"
@@ -281,7 +281,7 @@ export default function ContactSection() {
                       <textarea
                         required
                         rows={4}
-                        placeholder="Hi Krishna, we would like to interview you for our Full Stack Developer position..."
+                        placeholder="Write your message here..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="w-full bg-zinc-900/60 border border-zinc-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-zinc-600 focus:border-emerald-500 focus:outline-none transition-colors resize-none"
