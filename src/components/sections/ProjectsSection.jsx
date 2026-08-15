@@ -38,13 +38,13 @@ const projects = [
   },
   {
     id: 'mirror-trade',
-    title: 'MirrorTrade – Copy Trading & Financial Platform',
+    title: 'MirrorTrade – Automated Trading & Financial Platform',
     category: 'fullstack',
     categoryLabel: 'FinTech Platform',
     typeColor: 'bg-cyan-500',
-    description: 'A high-performance trading platform enabling automated strategy replication, real-time portfolio analytics, position tracking, and secure order execution.',
+    description: 'A high-performance trading platform enabling automated strategy execution, real-time portfolio analytics, position tracking, and secure order execution.',
     highlights: [
-      'Engineered real-time trade mirror architecture and multi-account portfolio performance analytics',
+      'Engineered real-time trade execution architecture and multi-account portfolio performance analytics',
       'Implemented secure user authentication, risk management parameters, and position tracking',
       'Designed high-throughput REST APIs and data pipelines for live market metrics',
       'Built clean financial dashboard with responsive data grids and transaction history'
