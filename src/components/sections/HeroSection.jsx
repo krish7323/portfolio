@@ -67,7 +67,7 @@ export default function HeroSection() {
     code: `const developer = {
   name: "Krishna Chandra Jha",
   roles: ["Frontend", "Backend", "Full Stack", "Mobile"],
-  company: "JT Brothers",
+  company: "Viz Digital",
   stack: {
     frontend: ["React.js", "Tailwind CSS", "HTML5", "CSS3", "JavaScript"],
     backend: ["Node.js", "Express.js", "REST APIs", "Middleware"],
@@ -90,10 +90,10 @@ export async function buildProduct(spec) {
     "fullstack": "End-to-End MERN Stack Applications & Admin Panels",
     "mobile": "React Native Cross-Platform Apps"
   },
-  "currentRole": "Junior Full Stack Developer @ JT Brothers",
+  "currentRole": "Web Developer @ Viz Digital",
   "education": "MCA (Chandigarh University, 2023-2025)"
 }`,
-    arch: `// Production Architecture Pattern at JT Brothers
+    arch: `// Production Architecture Pattern at Viz Digital
 1. Frontend Layer -> React.js + Tailwind CSS + Responsive Modular State
 2. Mobile Layer   -> React Native (Cross-Platform Mobile Apps)
 3. API Gateway    -> Node.js / Express.js (Service-Controller-Route Pattern)
@@ -162,7 +162,7 @@ export async function buildProduct(spec) {
 
             {/* Bio */}
             <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
-              I engineer end-to-end full-stack web and mobile applications using the <strong className="text-zinc-200">MERN stack</strong> (MongoDB, Express.js, React.js, Node.js) and <strong className="text-zinc-200">React Native</strong>. Currently contributing at <strong className="text-emerald-400 font-semibold">JT Brothers</strong>.
+              I engineer end-to-end full-stack web and mobile applications using the <strong className="text-zinc-200">MERN stack</strong> (MongoDB, Express.js, React.js, Node.js) and <strong className="text-zinc-200">React Native</strong>. Currently contributing as Web Developer at <strong className="text-emerald-400 font-semibold">Viz Digital</strong>.
             </p>
             
             {/* Interactive CTA Buttons */}
@@ -299,7 +299,7 @@ export async function buildProduct(spec) {
                   {[
                     { id: 'code', label: 'Developer.js', icon: Terminal },
                     { id: 'json', label: 'Roles_Spec.json', icon: Cpu },
-                    { id: 'arch', label: 'JTBrothers_Architecture.md', icon: Layers },
+                    { id: 'arch', label: 'VizDigital_Architecture.md', icon: Layers },
                   ].map((tab) => {
                     const TabIcon = tab.icon;
                     return (

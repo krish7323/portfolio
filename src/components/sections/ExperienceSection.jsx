@@ -6,11 +6,11 @@ import TiltCard from '../TiltCard';
 const experiences = [
   {
     id: 1,
-    company: 'JT Brothers',
-    role: 'Junior Full Stack Developer',
-    period: 'Jan 2026 – Present (6+ Months)',
-    location: 'India',
-    summary: 'Full-stack web application development across frontend, backend, and panel modules using React.js, React Native, and the MERN stack.',
+    company: 'Viz Digital',
+    role: 'Web Developer',
+    period: 'March 2026 – Present (6+ Months)',
+    location: 'Zirakpur, Punjab, India',
+    summary: 'Full-stack web application development across client websites, frontend, backend, and panel modules using React.js, React Native, and the MERN stack.',
     bullets: [
       'Work across the full stack on client web projects, handling frontend, backend, and panel-based modules using React.js, Node.js, Express.js, and MongoDB',
       'Build and maintain responsive frontend pages and reusable React components based on project requirements',

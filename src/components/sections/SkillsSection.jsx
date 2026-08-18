@@ -48,7 +48,7 @@ const skills = [
 const achievements = [
   { text: 'Engineered responsive Admin & Vendor Panels with Role-Based Access Control', icon: '⚡' },
   { text: 'Built and uploaded multiple full stack production web applications on GitHub', icon: '🚀' },
-  { text: '6+ months professional experience as Junior Full Stack Developer at JT Brothers', icon: '💻' },
+  { text: '6+ months professional experience as Web Developer at Viz Digital', icon: '💻' },
   { text: 'Integrated Razorpay payment gateway with secure order creation & signature verification', icon: '🔧' }
 ];
 

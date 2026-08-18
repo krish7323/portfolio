@@ -1,17 +1,17 @@
 # Krishna Chandra Jha
 **Email:** jhasatya7323@gmail.com | **Phone:** +91-7323000894  
-**Portfolio:** [krishnachandrajha.netlify.app](https://krishnachandrajha.netlify.app) | **GitHub:** [github.com/krish7323](https://github.com/krish7323) | **LinkedIn:** [linkedin.com/in/krishna-chandra-jha-423909321](https://linkedin.com/in/krishna-chandra-jha-423909321)
+**Portfolio:** [portfolio-ashen-alpha-dv0whhsamo.vercel.app](https://portfolio-ashen-alpha-dv0whhsamo.vercel.app/) | **GitHub:** [github.com/krish7323](https://github.com/krish7323) | **LinkedIn:** [linkedin.com/in/krishna-chandra-jha-423909321](https://linkedin.com/in/krishna-chandra-jha-423909321)
 
 ---
 
 ## Professional Summary
-Web Developer and App Developer with 6+ months of professional experience as a Junior Full Stack Developer at JT Brothers, working across frontend, backend, and admin/vendor panel development using React, React Native, and the MERN stack (MongoDB, Express.js, React.js, Node.js). Experienced in developing REST APIs, admin and vendor management panels, payment gateway integration, and authentication systems, with working knowledge of PHP and MySQL. Strong foundation in Data Structures and Algorithms with 500+ problems solved. Looking to contribute to challenging web and app development projects.
+Web Developer and App Developer with 6+ months of professional experience as a Web Developer at Viz Digital, working across frontend, backend, and admin/vendor panel development using React, React Native, and the MERN stack (MongoDB, Express.js, React.js, Node.js). Experienced in developing REST APIs, admin and vendor management panels, payment gateway integration, and authentication systems, with working knowledge of PHP and MySQL. Strong foundation in Data Structures and Algorithms with 500+ problems solved. Looking to contribute to challenging web and app development projects.
 
 ---
 
 ## Work Experience
-### **Junior Full Stack Developer** | JT Brothers  
-*Jan 2026 – Present*
+### **Web Developer** | Viz Digital (Zirakpur, Punjab)  
+*March 2026 – Present*
 - Work across the full stack on client web projects, handling frontend, backend, and panel-based modules using React.js, Node.js, Express.js, and MongoDB.
 - Build and maintain responsive frontend pages and reusable React components based on project requirements.
 - Develop and integrate backend REST APIs to support frontend features and admin/vendor panel functionality.
