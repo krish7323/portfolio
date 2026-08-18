@@ -1,9 +1,25 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, Sparkles, Layers, ShieldCheck, Database, X, Code, CheckCircle2, Smartphone, TrendingUp, Compass, Film, Users } from 'lucide-react';
+import { Github, ExternalLink, Sparkles, Layers, ShieldCheck, Database, X, Code, CheckCircle2, Smartphone, TrendingUp, Compass, Film, Users, Heart } from 'lucide-react';
 import TiltCard from '../TiltCard';
 
 const projects = [
+  {
+    id: 'rishta-24',
+    title: 'Rishta 24 – Matrimony & Matchmaking Platform',
+    category: 'fullstack',
+    categoryLabel: 'Full Stack Web',
+    typeColor: 'bg-rose-500',
+    description: 'A full-stack matchmaking and matrimonial web application featuring multi-criteria partner preference matching, verified profile badges, real-time messaging, and Razorpay membership plan integration.',
+    highlights: [
+      'Engineered intelligent partner recommendation and search filtering algorithm based on user preferences',
+      'Developed multi-step profile builder with secure photo upload pipelines and verification badges',
+      'Integrated Razorpay payment gateway for premium membership subscriptions and direct contact unlocks',
+      'Built real-time messaging and notification module with Express and MongoDB persistence'
+    ],
+    tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Razorpay', 'Tailwind CSS', 'REST APIs'],
+    link: 'https://github.com/krish7323'
+  },
   {
     id: 'fluencer-app',
     title: 'Fluencer App – Influencer & Brand Campaign Platform',
@@ -24,7 +40,7 @@ const projects = [
     id: 'tour-website',
     title: 'Viz Travels (TourWebsite) – Travel Booking Platform',
     category: 'fullstack',
-    categoryLabel: 'Full Stack',
+    categoryLabel: 'Full Stack Web',
     typeColor: 'bg-emerald-500',
     description: 'Built and deployed a full-stack tour and travel booking website with a multi-step booking flow. Developed an Admin Panel for managing tours, bookings, and users, and a Vendor Panel for partner listing management with Razorpay payment integration.',
     highlights: [
@@ -72,7 +88,7 @@ const projects = [
     id: 'employee-mgmt',
     title: 'Employee Management System',
     category: 'fullstack',
-    categoryLabel: 'Full Stack',
+    categoryLabel: 'Full Stack Web',
     typeColor: 'bg-amber-500',
     description: 'Developed a full-stack web application to manage employee records with CRUD operations and role-based access control. Built RESTful APIs for efficient backend communication.',
     highlights: [
@@ -113,7 +129,7 @@ export default function ProjectsSection() {
               Production Projects
             </h2>
             <p className="text-zinc-400 text-sm mt-1 max-w-lg">
-              Mobile apps, full-stack platforms, and backend architectures built by Krishna Chandra Jha.
+              Full-stack platforms, mobile apps, and backend architectures built by Krishna Chandra Jha.
             </p>
           </div>
 
@@ -121,8 +137,8 @@ export default function ProjectsSection() {
           <div className="flex flex-wrap items-center gap-2 bg-[#0d0f17] border border-zinc-800 p-1.5 rounded-xl self-start sm:self-auto">
             {[
               { id: 'all', label: 'All Projects' },
-              { id: 'mobile', label: 'Mobile App' },
               { id: 'fullstack', label: 'Full Stack Web' },
+              { id: 'mobile', label: 'Mobile App' },
               { id: 'backend', label: 'Backend & APIs' },
             ].map((tab) => (
               <button
