@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-export default function TiltCard({ children, className = '', maxTilt = 8, scale = 1.02 }) {
+export default function TiltCard({ children, className = '', maxTilt = 7, scale = 1.02 }) {
   const cardRef = useRef(null);
   const [transform, setTransform] = useState('perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)');
   const [spotlight, setSpotlight] = useState({ x: 50, y: 50, opacity: 0 });
@@ -34,7 +34,7 @@ export default function TiltCard({ children, className = '', maxTilt = 8, scale 
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden transition-all duration-300 ease-out will-change-transform rounded-2xl ${className}`}
+      className={`relative overflow-hidden rounded-2xl transition-all duration-300 ease-out will-change-transform ${className}`}
       style={{
         transform,
         transformStyle: 'preserve-3d',
@@ -44,7 +44,7 @@ export default function TiltCard({ children, className = '', maxTilt = 8, scale 
       <div
         className="pointer-events-none absolute -inset-px rounded-2xl transition-opacity duration-300 z-20"
         style={{
-          background: `radial-gradient(400px circle at ${spotlight.x}% ${spotlight.y}%, rgba(16, 185, 129, 0.25), transparent 70%)`,
+          background: `radial-gradient(400px circle at ${spotlight.x}% ${spotlight.y}%, rgba(16, 185, 129, 0.3), rgba(6, 182, 212, 0.15), transparent 70%)`,
           opacity: spotlight.opacity,
         }}
       />
@@ -53,10 +53,11 @@ export default function TiltCard({ children, className = '', maxTilt = 8, scale 
       <div
         className="pointer-events-none absolute inset-0 transition-opacity duration-300 z-10"
         style={{
-          background: `radial-gradient(circle at ${spotlight.x}% ${spotlight.y}%, rgba(255, 255, 255, 0.08) 0%, transparent 60%)`,
+          background: `radial-gradient(circle at ${spotlight.x}% ${spotlight.y}%, rgba(255, 255, 255, 0.07) 0%, transparent 60%)`,
           opacity: spotlight.opacity,
         }}
       />
+
       {children}
     </div>
   );

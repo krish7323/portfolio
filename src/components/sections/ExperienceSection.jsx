@@ -23,13 +23,13 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-20 px-6 sm:px-12 lg:px-20 bg-[#09090b]">
+    <section id="experience" className="py-20 px-6 sm:px-12 lg:px-20 bg-transparent relative z-10">
       <div className="max-w-7xl mx-auto space-y-12">
         
         {/* Section Header */}
         <div>
-          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-emerald-400 block mb-2">
-            Career Timeline
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400 block mb-2">
+            Career Timeline & Impact
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Work Experience
@@ -49,29 +49,29 @@ export default function ExperienceSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <TiltCard maxTilt={4} scale={1.01}>
-                <div className="bg-[#0d0f17] border border-zinc-800/80 hover:border-emerald-500/40 rounded-2xl p-7 sm:p-9 transition-colors shadow-2xl space-y-6">
+              <TiltCard maxTilt={5} scale={1.01}>
+                <div className="bg-[#0C111E]/70 border border-white/[0.08] hover:border-emerald-500/40 rounded-2xl p-7 sm:p-9 transition-colors shadow-2xl space-y-6 backdrop-blur-md">
                   
                   {/* Top Bar */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-800/80 pb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/[0.08] pb-6">
                     <div>
                       <div className="flex items-center gap-3">
-                        <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                        <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                           <Building2 className="w-6 h-6" />
                         </div>
                         <h3 className="text-2xl font-bold text-white">{exp.company}</h3>
                       </div>
-                      <span className="text-sm font-semibold text-emerald-400 block mt-1">
+                      <span className="text-sm font-semibold text-emerald-400 block mt-1.5">
                         {exp.role}
                       </span>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-zinc-400">
-                      <span className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800">
+                    <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-zinc-300">
+                      <span className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#12192B]/80 border border-white/[0.08]">
                         <Calendar className="w-3.5 h-3.5 text-emerald-400" />
                         {exp.period}
                       </span>
-                      <span className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800">
+                      <span className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#12192B]/80 border border-white/[0.08]">
                         <MapPin className="w-3.5 h-3.5 text-cyan-400" />
                         {exp.location}
                       </span>
@@ -79,7 +79,7 @@ export default function ExperienceSection() {
                   </div>
 
                   {/* Summary */}
-                  <p className="text-sm text-zinc-300 leading-relaxed font-medium">
+                  <p className="text-sm text-zinc-200 leading-relaxed font-medium">
                     {exp.summary}
                   </p>
 
@@ -98,7 +98,7 @@ export default function ExperienceSection() {
                     {exp.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 rounded-md bg-zinc-900 text-zinc-300 text-xs font-mono border border-zinc-800 hover:border-emerald-500/40 transition-colors"
+                        className="px-3 py-1 rounded-lg bg-[#12192B]/80 text-zinc-200 text-xs font-mono border border-white/[0.08] hover:border-emerald-500/40 hover:text-emerald-300 transition-colors"
                       >
                         {tag}
                       </span>

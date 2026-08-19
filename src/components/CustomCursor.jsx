@@ -9,7 +9,7 @@ export default function CustomCursor() {
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
 
-  const springConfig = { damping: 28, stiffness: 320, mass: 0.5 };
+  const springConfig = { damping: 26, stiffness: 360, mass: 0.5 };
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
 
@@ -27,7 +27,7 @@ export default function CustomCursor() {
 
     const handleMouseOver = (e) => {
       const target = e.target;
-      const clickable = target.closest('a, button, input, textarea, [data-cursor]');
+      const clickable = target.closest('a, button, input, textarea, [data-cursor], canvas');
       if (clickable) {
         setIsHovered(true);
         const customText = clickable.getAttribute('data-cursor');
@@ -51,9 +51,9 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Outer Follower Ring */}
+      {/* Outer Luminous Follower Ring */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full pointer-events-none z-[999] flex items-center justify-center font-mono text-[9px] font-bold text-black"
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[999] flex items-center justify-center font-mono text-[9px] font-bold text-black uppercase tracking-tight"
         style={{
           x: cursorX,
           y: cursorY,
@@ -61,29 +61,29 @@ export default function CustomCursor() {
           translateY: '-50%',
         }}
         animate={{
-          width: isHovered ? (cursorText ? 64 : 44) : 28,
-          height: isHovered ? (cursorText ? 64 : 44) : 28,
-          backgroundColor: isHovered ? 'rgba(16, 185, 129, 0.95)' : 'rgba(16, 185, 129, 0.1)',
-          borderColor: isHovered ? 'rgba(16, 185, 129, 1)' : 'rgba(16, 185, 129, 0.4)',
+          width: isHovered ? (cursorText ? 62 : 44) : 28,
+          height: isHovered ? (cursorText ? 62 : 44) : 28,
+          backgroundColor: isHovered ? 'rgba(16, 185, 129, 0.95)' : 'rgba(16, 185, 129, 0.12)',
+          borderColor: isHovered ? 'rgba(52, 211, 153, 1)' : 'rgba(16, 185, 129, 0.45)',
           borderWidth: isHovered ? 0 : 1.5,
-          boxShadow: isHovered ? '0 0 20px rgba(16, 185, 129, 0.5)' : 'none',
+          boxShadow: isHovered ? '0 0 24px rgba(16, 185, 129, 0.6)' : 'none',
         }}
-        transition={{ type: 'spring', damping: 20, stiffness: 350 }}
+        transition={{ type: 'spring', damping: 20, stiffness: 380 }}
       >
         {cursorText && (
           <motion.span
-            initial={{ opacity: 0, scale: 0.5 }}
+            initial={{ opacity: 0, scale: 0.6 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="tracking-tighter uppercase font-extrabold"
+            className="tracking-tighter font-extrabold"
           >
             {cursorText}
           </motion.span>
         )}
       </motion.div>
 
-      {/* Center Precise Dot */}
+      {/* Center Precision Neon Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-emerald-400 pointer-events-none z-[1000] shadow-[0_0_8px_#10b981]"
+        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-emerald-400 pointer-events-none z-[1000] shadow-[0_0_10px_#10B981]"
         style={{
           x: mouseX,
           y: mouseY,

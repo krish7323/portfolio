@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, X, CheckCircle2 } from 'lucide-react';
+import { Github, ExternalLink, X, CheckCircle2, ArrowUpRight } from 'lucide-react';
 import TiltCard from '../TiltCard';
 
 const projects = [
@@ -9,7 +9,8 @@ const projects = [
     title: 'Rishta 24 – Matrimony & Matchmaking Platform',
     category: 'fullstack',
     categoryLabel: 'Full Stack Web',
-    typeColor: 'bg-rose-500',
+    badgeColor: 'bg-rose-500/10 border-rose-500/30 text-rose-400',
+    dotColor: 'bg-rose-400 shadow-[0_0_8px_#F43F5E]',
     description: 'A full-stack matchmaking and matrimonial web application featuring multi-criteria partner preference matching, verified profile badges, real-time messaging, and Razorpay membership plan integration.',
     highlights: [
       'Engineered intelligent partner recommendation and search filtering algorithm based on user preferences',
@@ -25,7 +26,8 @@ const projects = [
     title: 'Fluencer App – Influencer & Brand Campaign Platform',
     category: 'mobile',
     categoryLabel: 'Mobile & Web App',
-    typeColor: 'bg-indigo-500',
+    badgeColor: 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400',
+    dotColor: 'bg-cyan-400 shadow-[0_0_8px_#06B6D4]',
     description: 'A full-stack React Native mobile & web platform for influencer marketing. Features brand campaign management, dynamic live stats tracking, OTP phone verification, EAS build deployment, and showcase carousels.',
     highlights: [
       'Engineered cross-platform mobile experience with React Native & Expo EAS build distribution',
@@ -41,7 +43,8 @@ const projects = [
     title: 'Viz Travels (TourWebsite) – Travel Booking Platform',
     category: 'fullstack',
     categoryLabel: 'Full Stack Web',
-    typeColor: 'bg-emerald-500',
+    badgeColor: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400',
+    dotColor: 'bg-emerald-400 shadow-[0_0_8px_#10B981]',
     description: 'Built and deployed a full-stack tour and travel booking website with a multi-step booking flow. Developed an Admin Panel for managing tours, bookings, and users, and a Vendor Panel for partner listing management with Razorpay payment integration.',
     highlights: [
       'Engineered Admin & Vendor Panels with role-based permissions (RBAC)',
@@ -57,7 +60,8 @@ const projects = [
     title: 'MirrorTrade – Automated Trading & Financial Platform',
     category: 'fullstack',
     categoryLabel: 'FinTech Platform',
-    typeColor: 'bg-cyan-500',
+    badgeColor: 'bg-indigo-500/10 border-indigo-500/30 text-indigo-400',
+    dotColor: 'bg-indigo-400 shadow-[0_0_8px_#6366F1]',
     description: 'A high-performance trading platform enabling automated strategy execution, real-time portfolio analytics, position tracking, and secure order execution.',
     highlights: [
       'Engineered real-time trade execution architecture and multi-account portfolio performance analytics',
@@ -73,7 +77,8 @@ const projects = [
     title: 'OTT Streaming App – Backend Infrastructure',
     category: 'backend',
     categoryLabel: 'Backend & APIs',
-    typeColor: 'bg-teal-500',
+    badgeColor: 'bg-teal-500/10 border-teal-500/30 text-teal-400',
+    dotColor: 'bg-teal-400 shadow-[0_0_8px_#14B8A6]',
     description: 'Built the backend and REST APIs for an OTT (video streaming) application, handling user accounts and content data. Implemented authentication and authorization for secure access to streaming content.',
     highlights: [
       'High-throughput video streaming content catalog RESTful APIs',
@@ -89,7 +94,8 @@ const projects = [
     title: 'Employee Management System',
     category: 'fullstack',
     categoryLabel: 'Full Stack Web',
-    typeColor: 'bg-amber-500',
+    badgeColor: 'bg-amber-500/10 border-amber-500/30 text-amber-400',
+    dotColor: 'bg-amber-400 shadow-[0_0_8px_#F59E0B]',
     description: 'Developed a full-stack web application to manage employee records with CRUD operations and role-based access control. Built RESTful APIs for efficient backend communication.',
     highlights: [
       'Complete CRUD operations for multi-department employee directories',
@@ -116,25 +122,25 @@ export default function ProjectsSection() {
       });
 
   return (
-    <section id="projects" className="py-20 px-6 sm:px-12 lg:px-20 bg-[#09090b]">
+    <section id="projects" className="py-20 px-6 sm:px-12 lg:px-20 bg-transparent relative z-10">
       <div className="max-w-7xl mx-auto space-y-12">
         
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div>
-            <span className="text-xs font-mono font-semibold uppercase tracking-widest text-emerald-400 block mb-2">
-              Featured Work
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400 block mb-2">
+              Featured Work & Platforms
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
               Production Projects
             </h2>
             <p className="text-zinc-400 text-sm mt-1 max-w-lg">
-              Full-stack platforms, mobile apps, and backend architectures built by Krishna Chandra Jha.
+              Full-stack platforms, mobile apps, and backend architectures engineered by Krishna Chandra Jha.
             </p>
           </div>
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 bg-[#0d0f17] border border-zinc-800 p-1.5 rounded-xl self-start sm:self-auto">
+          {/* Glowing Filter Pills */}
+          <div className="flex flex-wrap items-center gap-2 bg-[#0C111E]/80 border border-white/[0.08] p-1.5 rounded-full self-start sm:self-auto shadow-lg backdrop-blur-xl">
             {[
               { id: 'all', label: 'All Projects' },
               { id: 'fullstack', label: 'Full Stack Web' },
@@ -144,10 +150,10 @@ export default function ProjectsSection() {
               <button
                 key={tab.id}
                 onClick={() => setFilter(tab.id)}
-                className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
+                className={`relative px-4 py-1.5 rounded-full text-xs font-bold transition-all duration-300 ${
                   filter === tab.id
-                    ? 'bg-emerald-500 text-black shadow-md shadow-emerald-500/20 font-bold'
-                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
+                    ? 'bg-gradient-to-r from-emerald-400 to-teal-400 text-black shadow-[0_0_15px_rgba(16,185,129,0.35)] font-extrabold'
+                    : 'text-zinc-400 hover:text-white hover:bg-white/[0.04]'
                 }`}
               >
                 {tab.label}
@@ -166,16 +172,16 @@ export default function ProjectsSection() {
                 initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
+                transition={{ duration: 0.4, delay: index * 0.07 }}
               >
                 <TiltCard maxTilt={8} scale={1.02} className="h-full">
-                  <div className="bg-[#0d0f17] border border-zinc-800/80 hover:border-emerald-500/40 rounded-2xl p-6 flex flex-col justify-between h-full transition-colors shadow-xl group">
+                  <div className="bg-[#0C111E]/65 border border-white/[0.08] hover:border-emerald-500/50 rounded-2xl p-6 flex flex-col justify-between h-full transition-all duration-300 shadow-xl group backdrop-blur-md">
                     <div>
                       {/* Top Header */}
                       <div className="flex items-center justify-between gap-2 mb-4">
                         <div className="flex items-center gap-2">
-                          <span className={`w-2.5 h-2.5 rounded-full ${project.typeColor} shadow-[0_0_8px_currentColor]`} />
-                          <span className="text-xs font-mono text-zinc-400 font-semibold uppercase tracking-wider">
+                          <span className={`w-2.5 h-2.5 rounded-full ${project.dotColor}`} />
+                          <span className={`text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full border ${project.badgeColor} uppercase tracking-wider`}>
                             {project.categoryLabel}
                           </span>
                         </div>
@@ -185,15 +191,15 @@ export default function ProjectsSection() {
                           target="_blank"
                           rel="noopener noreferrer"
                           data-cursor="GitHub"
-                          className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-colors"
+                          className="p-2 rounded-xl bg-[#12192B]/80 border border-white/[0.08] text-zinc-400 hover:text-white hover:border-white/[0.2] transition-colors"
                           title="View Source Code"
                         >
-                          <Github className="w-4 h-4" />
+                          <Github className="w-3.5 h-3.5" />
                         </a>
                       </div>
 
                       {/* Project Title */}
-                      <h3 className="text-lg font-bold text-white mb-2.5 group-hover:text-emerald-400 transition-colors">
+                      <h3 className="text-lg font-bold text-white mb-2.5 group-hover:text-emerald-400 transition-colors leading-snug">
                         {project.title}
                       </h3>
 
@@ -202,7 +208,7 @@ export default function ProjectsSection() {
                         {project.description}
                       </p>
 
-                      {/* Key bullets */}
+                      {/* Key Highlights */}
                       <ul className="space-y-1.5 mb-6">
                         {project.highlights.slice(0, 2).map((h, i) => (
                           <li key={i} className="text-xs text-zinc-300 flex items-start gap-2">
@@ -215,11 +221,11 @@ export default function ProjectsSection() {
 
                     <div>
                       {/* Tech Tags */}
-                      <div className="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-800/80 mb-5">
+                      <div className="flex flex-wrap gap-1.5 pt-4 border-t border-white/[0.08] mb-5">
                         {project.tags.map((tag, i) => (
                           <span
                             key={i}
-                            className="px-2.5 py-1 rounded-md bg-zinc-900 text-zinc-300 text-[11px] font-mono border border-zinc-800/80"
+                            className="px-2.5 py-1 rounded-md bg-[#12192B]/80 text-zinc-300 text-[11px] font-mono border border-white/[0.05]"
                           >
                             {tag}
                           </span>
@@ -227,14 +233,14 @@ export default function ProjectsSection() {
                       </div>
 
                       {/* Buttons */}
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between pt-1">
                         <button
                           onClick={() => setSelectedProject(project)}
-                          data-cursor="Details"
-                          className="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1"
+                          data-cursor="Inspect"
+                          className="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5"
                         >
                           <span>Inspect Details</span>
-                          <ExternalLink className="w-3.5 h-3.5" />
+                          <ArrowUpRight className="w-3.5 h-3.5" />
                         </button>
 
                         <a
@@ -244,7 +250,7 @@ export default function ProjectsSection() {
                           data-cursor="GitHub"
                           className="text-xs font-mono text-zinc-400 hover:text-white transition-colors"
                         >
-                          Source Code →
+                          Repository →
                         </a>
                       </div>
                     </div>
@@ -265,20 +271,20 @@ export default function ProjectsSection() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="w-full max-w-2xl bg-[#0d0f17] border border-zinc-700 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6 relative max-h-[90vh] overflow-y-auto"
+              className="w-full max-w-2xl bg-[#0C111E] border border-white/[0.15] rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 relative max-h-[90vh] overflow-y-auto"
             >
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 p-2 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white"
+                className="absolute top-6 right-6 p-2.5 rounded-full bg-[#12192B] border border-white/[0.1] text-zinc-400 hover:text-white"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
 
               <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400">
+                <span className={`text-xs font-mono font-bold px-3 py-1 rounded-full border ${selectedProject.badgeColor} uppercase tracking-wider inline-block`}>
                   {selectedProject.categoryLabel}
                 </span>
-                <h3 className="text-2xl font-bold text-white mt-1">
+                <h3 className="text-2xl font-bold text-white mt-2">
                   {selectedProject.title}
                 </h3>
               </div>
@@ -307,19 +313,19 @@ export default function ProjectsSection() {
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.tags.map((tag, i) => (
-                    <span key={i} className="px-3 py-1 rounded-lg bg-zinc-900 text-emerald-300 text-xs font-mono border border-zinc-800">
+                    <span key={i} className="px-3 py-1 rounded-lg bg-[#12192B] text-emerald-300 text-xs font-mono border border-emerald-500/20">
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-zinc-800 flex items-center justify-end gap-3">
+              <div className="pt-4 border-t border-white/[0.08] flex items-center justify-end gap-3">
                 <a
                   href={selectedProject.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs flex items-center gap-2 shadow-lg shadow-emerald-500/20"
+                  className="px-6 py-2.5 rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 text-black font-bold text-xs flex items-center gap-2 shadow-lg shadow-emerald-500/20 hover:scale-105 transition-transform"
                 >
                   <Github className="w-4 h-4" />
                   <span>View Repository on GitHub</span>
