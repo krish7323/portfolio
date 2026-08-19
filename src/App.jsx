@@ -1,4 +1,3 @@
-import React from 'react';
 import CustomCursor from './components/CustomCursor';
 import InteractiveParticles from './components/InteractiveParticles';
 import AmbientBackground from './components/AmbientBackground';

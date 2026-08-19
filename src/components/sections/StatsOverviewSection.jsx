@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import TiltCard from '../TiltCard';
 
 function Counter({ target, suffix = '' }) {
   const [count, setCount] = useState(0);
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   useEffect(() => {

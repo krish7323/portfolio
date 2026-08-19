@@ -1,5 +1,3 @@
-import React from 'react';
-
 const FooterDashboard = () => {
   return (
     <footer className="border-t border-zinc-800/50 bg-[#09090b] py-8 px-6 sm:px-12 lg:px-20 text-xs text-zinc-600">

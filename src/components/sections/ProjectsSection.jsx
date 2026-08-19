@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, Sparkles, Layers, ShieldCheck, Database, X, Code, CheckCircle2, Smartphone, TrendingUp, Compass, Film, Users, Heart } from 'lucide-react';
+import { Github, ExternalLink, X, CheckCircle2 } from 'lucide-react';
 import TiltCard from '../TiltCard';
 
 const projects = [

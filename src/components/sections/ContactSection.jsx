@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { 
   Mail, Phone, MapPin, Github, Linkedin, CheckCircle2, Copy, Check, 
-  Send, MessageSquare, ExternalLink, AlertCircle 
+  Send, MessageSquare, ExternalLink 
 } from 'lucide-react';
 import TiltCard from '../TiltCard';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [status, setStatus] = useState('idle'); // idle, submitting, success, error
-  const [errorMessage, setErrorMessage] = useState('');
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
 
@@ -28,7 +27,6 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('submitting');
-    setErrorMessage('');
 
     try {
       // Send real email via Web3Forms public API

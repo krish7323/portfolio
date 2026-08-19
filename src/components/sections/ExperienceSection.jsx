@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Building2, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
+import { Building2, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
 import TiltCard from '../TiltCard';
 
 const experiences = [

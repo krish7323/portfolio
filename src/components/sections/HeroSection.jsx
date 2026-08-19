@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Github, Linkedin, Mail, ArrowRight, Download, Copy, Check, Terminal, 
-  Sparkles, Layers, Cpu, ShieldCheck, Code, Server, Smartphone, Globe, ArrowUpRight 
+  Layers, Cpu, Code, Server, Smartphone, Globe 
 } from 'lucide-react';
 import TiltCard from '../TiltCard';
 

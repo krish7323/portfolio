@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Layout, Server, Database, Smartphone, ShieldCheck, Wrench, Trophy, 
-  GraduationCap, Search, CheckCircle, Code2, Sparkles 
+  GraduationCap, Search 
 } from 'lucide-react';
 import TiltCard from '../TiltCard';
 
