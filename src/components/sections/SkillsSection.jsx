@@ -46,10 +46,11 @@ const skills = [
 ];
 
 const achievements = [
-  { text: 'Engineered responsive Admin & Vendor Panels with Role-Based Access Control', icon: '⚡' },
-  { text: 'Built and uploaded multiple full-stack production web applications on GitHub', icon: '🚀' },
-  { text: '6+ months professional experience as Web Developer at Viz Digital', icon: '💻' },
-  { text: 'Integrated Razorpay payment gateway with secure order creation & signature verification', icon: '🔧' }
+  { text: 'Solved 500+ Data Structures and Algorithms (DSA) problems across LeetCode & coding platforms', icon: '🏆' },
+  { text: 'Engineered responsive Admin & Vendor Panels with Role-Based Access Control (RBAC)', icon: '⚡' },
+  { text: '6+ months professional experience contributing as Web Developer at Viz Digital', icon: '💻' },
+  { text: 'Integrated Razorpay payment gateway with secure order creation & signature verification', icon: '🔧' },
+  { text: 'Built and deployed multiple production full-stack MERN & React Native platforms on GitHub', icon: '🚀' }
 ];
 
 const education = [
