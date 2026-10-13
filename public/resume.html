@@ -2,146 +2,368 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Krishna Chandra Jha - ATS Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Chandra Jha - Full Stack & Mobile App Developer Resume</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.5;
-            color: #111111;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.45;
+            color: #1f2937;
+            background-color: #f3f4f6;
+            padding: 24px 16px;
         }
-        h1 {
-            font-size: 24px;
-            text-transform: uppercase;
-            margin-bottom: 4px;
-            text-align: center;
-        }
-        .contact-info {
-            text-align: center;
-            font-size: 13px;
-            margin-bottom: 18px;
-        }
-        .contact-info a {
-            color: #0056b3;
-            text-decoration: none;
-        }
-        h2 {
-            font-size: 14px;
-            text-transform: uppercase;
-            border-bottom: 1.5px solid #222;
-            padding-bottom: 3px;
-            margin-top: 18px;
-            margin-bottom: 8px;
-            letter-spacing: 0.5px;
-        }
-        p, li {
-            font-size: 13px;
-        }
-        ul {
-            margin-top: 4px;
-            margin-bottom: 8px;
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 3px;
-        }
-        .job-header {
+        .action-bar {
+            max-width: 840px;
+            margin: 0 auto 16px auto;
             display: flex;
             justify-content: space-between;
-            font-weight: bold;
+            align-items: center;
+            gap: 12px;
+        }
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        .btn-primary {
+            background-color: #059669;
+            color: #ffffff;
+            border-color: #047857;
+            box-shadow: 0 2px 4px rgba(5, 150, 105, 0.2);
+        }
+        .btn-primary:hover {
+            background-color: #047857;
+        }
+        .btn-secondary {
+            background-color: #ffffff;
+            color: #374151;
+            border-color: #d1d5db;
+        }
+        .btn-secondary:hover {
+            background-color: #f9fafb;
+            color: #111827;
+        }
+        .resume-container {
+            max-width: 840px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 36px 44px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #111827;
+            padding-bottom: 12px;
+            margin-bottom: 14px;
+        }
+        h1 {
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #111827;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            font-size: 14px;
+            font-weight: 600;
+            color: #059669;
+            margin-bottom: 6px;
+            letter-spacing: 0.2px;
+        }
+        .contact-info {
+            font-size: 12.5px;
+            color: #4b5563;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 14px;
+        }
+        .contact-info a {
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        h2 {
             font-size: 13.5px;
-            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #111827;
+            font-weight: 800;
+            border-bottom: 1.5px solid #374151;
+            padding-bottom: 3px;
+            margin-top: 14px;
+            margin-bottom: 8px;
         }
-        .job-title {
-            font-style: italic;
-            font-weight: normal;
+        p, li {
+            font-size: 12.5px;
+            color: #374151;
+            line-height: 1.45;
         }
-        .skills-list {
+        ul {
+            padding-left: 18px;
             margin-top: 4px;
             margin-bottom: 8px;
         }
-        .skills-list strong {
+        li {
+            margin-bottom: 3.5px;
+        }
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+        .skills-row {
+            font-size: 12.5px;
+            line-height: 1.4;
+        }
+        .skills-row strong {
+            color: #111827;
+            font-weight: 700;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-top: 8px;
+            margin-bottom: 2px;
+        }
+        .item-title {
             font-size: 13px;
+            font-weight: 700;
+            color: #111827;
+        }
+        .item-role {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #059669;
+            font-style: italic;
+        }
+        .item-date {
+            font-size: 12px;
+            font-weight: 600;
+            color: #4b5563;
+            text-align: right;
+            white-space: nowrap;
+        }
+        .project-item {
+            margin-bottom: 8px;
+        }
+        .project-title-line {
+            font-size: 13px;
+            font-weight: 700;
+            color: #111827;
+            margin-top: 6px;
+            margin-bottom: 2px;
+        }
+        .project-tech {
+            font-weight: 500;
+            font-size: 12px;
+            color: #4b5563;
+            font-style: italic;
+        }
+
+        /* Print and PDF Optimization */
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+            .action-bar {
+                display: none !important;
+            }
+            .resume-container {
+                max-width: 100%;
+                padding: 12px 18px;
+                box-shadow: none;
+                border-radius: 0;
+            }
+            h1 { font-size: 22px; }
+            h2 { margin-top: 10px; margin-bottom: 6px; }
+            p, li, .skills-row { font-size: 11.5px; line-height: 1.35; }
+            a { text-decoration: none; color: #111827 !important; }
         }
     </style>
 </head>
 <body>
 
-    <h1>Krishna Chandra Jha</h1>
-    <div class="contact-info">
-        Full Stack Developer (MERN Stack) | 
-        jhasatya7323@gmail.com | 
-        +91-7323000894 | 
-        <a href="https://portfolio-ashen-alpha-dv0whhsamo.vercel.app/" target="_blank">portfolio-krish.vercel.app</a> | 
-        <a href="https://github.com/krish7323">github.com/krish7323</a> | 
-        <a href="https://linkedin.com/in/krishna-chandra-jha-423909321">linkedin.com/in/krishna-chandra-jha</a>
+    <!-- Top Action Bar (Hidden when printing/saving to PDF) -->
+    <div class="action-bar">
+        <a href="/" class="action-btn btn-secondary">
+            ← Back to Portfolio
+        </a>
+        <button onclick="window.print()" class="action-btn btn-primary">
+            🖨️ Download / Print as PDF
+        </button>
     </div>
 
-    <h2>Professional Summary</h2>
-    <p>Results-driven Full Stack Developer with hands-on professional experience building scalable web applications, RESTful APIs, and cross-platform mobile interfaces using React.js, Node.js, Express.js, and MongoDB (MERN Stack). Skilled in designing service-controller-route backend architectures, multi-tenant Admin/Vendor panels, authentication workflows, and payment gateway integrations (Razorpay). Strong foundation in Data Structures and Algorithms with 500+ LeetCode problems solved. Holds a Master of Computer Applications (MCA) degree.</p>
+    <div class="resume-container">
+        
+        <!-- Header -->
+        <header>
+            <h1>Krishna Chandra Jha</h1>
+            <div class="subtitle">Full Stack Developer &amp; Mobile App Developer (React Native | MERN Stack)</div>
+            <div class="contact-info">
+                <span>📍 Chandigarh / Zirakpur (Punjab), India</span>
+                <span>📞 <a href="tel:+917323000894">+91-7323000894</a></span>
+                <span>✉️ <a href="mailto:jhasatya7323@gmail.com">jhasatya7323@gmail.com</a></span>
+                <span>🌐 <a href="https://portfolio-ashen-alpha-dv0whhsamo.vercel.app/" target="_blank">Portfolio</a></span>
+                <span>💻 <a href="https://github.com/krish7323" target="_blank">GitHub</a></span>
+                <span>💼 <a href="https://linkedin.com/in/krishna-chandra-jha-423909321" target="_blank">LinkedIn</a></span>
+            </div>
+        </header>
 
-    <h2>Technical Skills</h2>
-    <div class="skills-list">
-        <p><strong>Programming Languages:</strong> JavaScript (ES6+), C++, Python (Basic)</p>
-        <p><strong>Frontend Development:</strong> React.js, Tailwind CSS, HTML5, CSS3</p>
-        <p><strong>Backend Development:</strong> Node.js, Express.js, RESTful API Design, Microservices</p>
-        <p><strong>Databases:</strong> MongoDB (NoSQL), SQL, MySQL</p>
-        <p><strong>Mobile Development:</strong> React Native (Cross-Platform Apps)</p>
-        <p><strong>Payment & Security:</strong> Razorpay Integration, OTP Authentication, Role-Based Access Control (RBAC)</p>
-        <p><strong>Tools & Platforms:</strong> Git, GitHub, VS Code, Postman</p>
+        <!-- Professional Summary -->
+        <section>
+            <h2>Professional Summary</h2>
+            <p>
+                Results-driven <strong>Full Stack &amp; Mobile App Developer</strong> with hands-on professional experience at Viz Digital building cross-platform mobile applications (React Native, Expo) and scalable web platforms (MERN Stack: MongoDB, Express.js, React.js, Node.js). Experienced in designing RESTful service-controller architectures, multi-tenant Admin/Vendor portals, real-time WebSocket communication, role-based access control (RBAC), and Android release pipelines (EAS &amp; Google Play Internal Beta tracks). Strong algorithmic background with <strong>500+ LeetCode problems solved</strong>. Holds a Master of Computer Applications (MCA) degree.
+            </p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skills-row">
+                    <strong>Mobile App Development:</strong> React Native, Expo, EAS Build, Android Bundle Export, Map/GPS Pinning, Mobile State Management
+                </div>
+                <div class="skills-row">
+                    <strong>Frontend Engineering:</strong> React.js, Tailwind CSS, HTML5, CSS3, JavaScript (ES6+), Reusable Components, Responsive Design
+                </div>
+                <div class="skills-row">
+                    <strong>Backend &amp; APIs:</strong> Node.js, Express.js, RESTful API Architecture, Service-Controller Pattern, Middleware, Microservices
+                </div>
+                <div class="skills-row">
+                    <strong>Databases &amp; Storage:</strong> MongoDB Atlas (NoSQL), Mongoose ODM, MySQL, SQL, Database Indexing, Connection Pooling
+                </div>
+                <div class="skills-row">
+                    <strong>Real-Time &amp; Cloud:</strong> Socket.IO, Firebase Cloud Messaging (FCM), Google Maps API, Render Cloud Hosting
+                </div>
+                <div class="skills-row">
+                    <strong>Security &amp; Payments:</strong> Bcrypt Password Hashing, JWT Authentication, RBAC Permissions, Razorpay Payment Gateway
+                </div>
+                <div class="skills-row">
+                    <strong>Tools &amp; Practices:</strong> Git, GitHub, VS Code, Postman, Vite, C++, Python (Basic), Agile Workflows
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section>
+            <h2>Work Experience</h2>
+            <div class="item-header">
+                <div>
+                    <span class="item-title">Viz Digital</span> &mdash; <span class="item-role">Web &amp; App Developer</span>
+                </div>
+                <span class="item-date">March 2026 &ndash; Present | Zirakpur / Chandigarh, Punjab</span>
+            </div>
+            <ul>
+                <li>Engineer and deploy production-grade cross-platform mobile apps using <strong>React Native</strong> and <strong>Expo</strong> with EAS cloud build pipelines.</li>
+                <li>Develop responsive frontend web applications and reusable component libraries using <strong>React.js</strong> and <strong>Tailwind CSS</strong>.</li>
+                <li>Design, optimize, and maintain modular <strong>Node.js &amp; Express.js REST APIs</strong> supporting multi-tenant admin, vendor, and customer modules.</li>
+                <li>Implement security and performance safeguards including salted bcrypt password hashing, scoped token-based auth, RBAC permissions, and MongoDB query indexing.</li>
+                <li>Integrate <strong>Razorpay</strong> payment gateway with secure server-side order generation, signature verification, and webhook handling.</li>
+                <li>Collaborate in an Agile environment using Git/GitHub for feature branching, version control, and peer code reviews.</li>
+            </ul>
+        </section>
+
+        <!-- Key Projects -->
+        <section>
+            <h2>Key Projects</h2>
+
+            <div class="project-item">
+                <div class="project-title-line">
+                    S-farmart Customer &amp; Partner Apps &ndash; Connected Commerce Ecosystem
+                    <span class="project-tech">| React Native, Expo, Node.js, Express, MongoDB Atlas, Socket.IO, Google Maps, EAS</span>
+                </div>
+                <ul>
+                    <li>Engineered two interconnected React Native applications: <strong>Customer App</strong> (catalog browsing, GPS address pinning, cart checkout, live rider tracking) and <strong>Partner App</strong> (store controls, inventory management, live order alerts, fulfillment updates).</li>
+                    <li>Built layered security &amp; reliability safeguards: bcrypt hashing, scoped JWT auth, atomic inventory increments, checkout replay protection, sequential background-aware polling, and connection pooling.</li>
+                    <li>Verified builds via automated test suites, Expo Doctor dependency audits, and distributed Android release packages on Google Play internal testing tracks.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title-line">
+                    Viz TV &ndash; OTT 4K Video Streaming Mobile Platform
+                    <span class="project-tech">| React Native, Node.js, Express, MongoDB, Google Play</span>
+                </div>
+                <ul>
+                    <li>Developed and published a high-throughput mobile video streaming app on Google Play (built at Viz Digital).</li>
+                    <li>Integrated custom media player controls with multi-bitrate streaming, video speed controls, offline downloads caching, and token-based media authorization.</li>
+                    <li>Designed low-latency indexed MongoDB schemas for high-concurrency movie recommendations, watchlist curation, and talent hunt video submissions.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title-line">
+                    Viz Travels (TourWebsite) &ndash; Travel Booking Platform
+                    <span class="project-tech">| React.js, Node.js, Express, MongoDB, Razorpay, RBAC</span>
+                </div>
+                <ul>
+                    <li>Engineered a full-stack tour booking web platform featuring a multi-step booking flow, Admin Panel for tour lifecycle management, and Vendor Panel for listings.</li>
+                    <li>Integrated Razorpay payment gateway with server-side signature verification; built REST APIs with OTP authentication and optimized query indexing.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title-line">
+                    Fluencer App &ndash; Influencer &amp; Brand Collaboration Platform
+                    <span class="project-tech">| React Native, React.js, Node.js, Express, MongoDB, EAS Build</span>
+                </div>
+                <ul>
+                    <li>Built a full-stack mobile &amp; web application for influencer campaign management, deal escrow payouts, real-time messaging, and 10-digit mobile OTP authentication.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h2>Education</h2>
+            <div class="item-header">
+                <div>
+                    <span class="item-title">Master of Computer Applications (MCA)</span> &mdash; <span>Chandigarh University, Mohali</span>
+                </div>
+                <span class="item-date">2023 &ndash; 2025 | First Division</span>
+            </div>
+            <div class="item-header">
+                <div>
+                    <span class="item-title">B.Sc. (Hons) Mathematics</span> &mdash; <span>J.N. College, Darbhanga</span>
+                </div>
+                <span class="item-date">2019 &ndash; 2023 | Honours</span>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section>
+            <h2>Achievements &amp; Activities</h2>
+            <ul>
+                <li>Solved <strong>500+ Data Structures &amp; Algorithms problems</strong> across LeetCode and competitive coding platforms.</li>
+                <li>Production applications published and verified on <strong>Google Play Store</strong> and testing tracks.</li>
+                <li>Architected full-stack open-source platforms and active contributor on GitHub with 8+ deployed repositories.</li>
+            </ul>
+        </section>
+
     </div>
-
-    <h2>Work Experience</h2>
-    <div class="job-header">
-        <span>Web Developer &mdash; Viz Digital (Zirakpur, Punjab)</span>
-        <span>March 2026 &ndash; Present</span>
-    </div>
-    <ul>
-        <li>Engineered responsive frontend web applications and reusable component libraries using React.js and Tailwind CSS.</li>
-        <li>Designed and integrated scalable Node.js and Express.js REST APIs supporting multi-tenant admin, vendor, and user panels.</li>
-        <li>Implemented role-based access control (RBAC), OTP-based authentication, and MongoDB schema optimizations for performance and security.</li>
-        <li>Integrated Razorpay payment gateway with order creation, webhooks, and signature verification.</li>
-        <li>Collaborated in an Agile development environment using Git/GitHub for version control and code reviews.</li>
-    </ul>
-
-    <h2>Key Projects</h2>
-    <p><strong>S-farmart Customer &amp; Partner Apps &ndash; Connected Commerce Ecosystem</strong> | <em>React Native, Expo, Node.js, Express.js, MongoDB Atlas, Socket.IO, Google Maps, EAS</em></p>
-    <ul>
-        <li>Engineered two interconnected React Native applications: Customer App (catalog browsing, GPS pinning, cart checkout, rider tracking) and Partner App (store toggles, inventory updates, live order alerts, fulfillment).</li>
-        <li>Implemented multi-layer safeguards including bcrypt hashing, scoped JWT auth, atomic stock operations, checkout replay protection, and connection pooling.</li>
-        <li>Validated builds with automated test suites, Expo Doctor checks, and released to Google Play internal testing tracks.</li>
-    </ul>
-
-    <p><strong>Viz Travels &ndash; Tour & Travel Booking Platform</strong> | <em>React.js, Node.js, Express.js, MongoDB, Razorpay</em></p>
-    <ul>
-        <li>Engineered full-stack booking platform featuring multi-step reservation workflows, user management, and vendor portals.</li>
-        <li>Developed backend REST APIs (service-controller-route architecture) and integrated Razorpay for secure payment handling.</li>
-        <li>Implemented OTP authentication and optimized MongoDB indexing for low-latency search and filtering.</li>
-    </ul>
-
-    <p><strong>OTT Streaming Application Backend</strong> | <em>Node.js, Express.js, MongoDB</em></p>
-    <ul>
-        <li>Built high-concurrency backend services for video streaming user accounts, catalog management, and subscription handling.</li>
-        <li>Designed token-based authentication and authorization mechanisms for secure content delivery.</li>
-    </ul>
-
-    <h2>Education</h2>
-    <div class="job-header">
-        <span>Master of Computer Applications (MCA) &mdash; Chandigarh University</span>
-        <span>2023 &ndash; 2025</span>
-    </div>
-    <div class="job-header">
-        <span>B.Sc. (Hons) Mathematics &mdash; J.N. College, Darbhanga</span>
-        <span>2019 &ndash; 2023</span>
-    </div>
-
-    <h2>Achievements</h2>
-    <ul>
-        <li>Solved <strong>500+ Data Structures and Algorithms</strong> problems on LeetCode.</li>
-        <li>Built and uploaded full-stack web and mobile development projects on GitHub.</li>
-    </ul>
 
 </body>
 </html>

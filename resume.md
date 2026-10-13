@@ -1,66 +1,69 @@
 # Krishna Chandra Jha
-**Email:** jhasatya7323@gmail.com | **Phone:** +91-7323000894  
+**Full Stack Developer & Mobile App Developer (React Native | MERN Stack)**  
+**Location:** Chandigarh / Zirakpur (Punjab), India  
+**Phone:** [+91-7323000894](tel:+917323000894) | **Email:** [jhasatya7323@gmail.com](mailto:jhasatya7323@gmail.com)  
 **Portfolio:** [portfolio-ashen-alpha-dv0whhsamo.vercel.app](https://portfolio-ashen-alpha-dv0whhsamo.vercel.app/) | **GitHub:** [github.com/krish7323](https://github.com/krish7323) | **LinkedIn:** [linkedin.com/in/krishna-chandra-jha-423909321](https://linkedin.com/in/krishna-chandra-jha-423909321)
 
 ---
 
 ## Professional Summary
-Web Developer and App Developer with 6+ months of professional experience as a Web Developer at Viz Digital, working across frontend, backend, and admin/vendor panel development using React, React Native, and the MERN stack (MongoDB, Express.js, React.js, Node.js). Experienced in developing REST APIs, admin and vendor management panels, payment gateway integration, and authentication systems, with working knowledge of PHP and MySQL. Strong foundation in Data Structures and Algorithms with 500+ problems solved. Looking to contribute to challenging web and app development projects.
-
----
-
-## Work Experience
-### **Web Developer** | Viz Digital (Zirakpur, Punjab)  
-*March 2026 – Present*
-- Work across the full stack on client web projects, handling frontend, backend, and panel-based modules using React.js, Node.js, Express.js, and MongoDB.
-- Build and maintain responsive frontend pages and reusable React components based on project requirements.
-- Develop and integrate backend REST APIs to support frontend features and admin/vendor panel functionality.
-- Contribute to admin and vendor panel modules, enabling role-based management of users, listings, and content.
-- Collaborate with the team using Git/GitHub for version control and code reviews.
+Results-driven **Full Stack & Mobile App Developer** with hands-on professional experience at Viz Digital building cross-platform mobile applications (React Native, Expo) and scalable web platforms (MERN Stack: MongoDB, Express.js, React.js, Node.js). Experienced in designing RESTful service-controller architectures, multi-tenant Admin/Vendor portals, real-time WebSocket communication, role-based access control (RBAC), and Android release pipelines (EAS & Google Play Internal Beta tracks). Strong algorithmic background with **500+ LeetCode problems solved**. Holds a Master of Computer Applications (MCA) degree.
 
 ---
 
 ## Technical Skills
-- **Programming Languages:** JavaScript, Python (Basic), C++
-- **Web Frontend:** HTML5, CSS3, React.js, Tailwind CSS
-- **App Development:** React Native (Cross-Platform Mobile Apps)
-- **Backend Technologies:** Node.js, Express.js, REST API Development
-- **Databases:** MongoDB, SQL, MySQL
-- **Payment Integration:** Razorpay (Order Creation & Signature Verification)
-- **Tools & Platforms:** Git, GitHub, VS Code
-- **Core Concepts:** CRUD Operations, Authentication, Role-Based Access Control, Admin & Vendor Panels
+- **Mobile App Development:** React Native, Expo, EAS Build, Android Bundle Export, Map/GPS Pinning, Mobile State Management
+- **Frontend Engineering:** React.js, Tailwind CSS, HTML5, CSS3, JavaScript (ES6+), Reusable Components, Responsive Design
+- **Backend & APIs:** Node.js, Express.js, RESTful API Architecture, Service-Controller Pattern, Middleware, Microservices
+- **Databases & Storage:** MongoDB Atlas (NoSQL), Mongoose ODM, MySQL, SQL, Database Indexing, Connection Pooling
+- **Real-Time & Cloud:** Socket.IO, Firebase Cloud Messaging (FCM), Google Maps API, Render Cloud Hosting
+- **Security & Payments:** Bcrypt Password Hashing, JWT Authentication, RBAC Permissions, Razorpay Payment Gateway
+- **Tools & Methodologies:** Git, GitHub, VS Code, Postman, Vite, C++, Python (Basic), Agile Workflows
 
 ---
 
-## Projects
+## Work Experience
+### **Web & App Developer** | Viz Digital (Zirakpur / Chandigarh, Punjab)  
+*March 2026 – Present*
+- Engineer and deploy production-grade cross-platform mobile apps using **React Native** and **Expo** with EAS cloud build pipelines.
+- Develop responsive frontend web applications and reusable component libraries using **React.js** and **Tailwind CSS**.
+- Design, optimize, and maintain modular **Node.js & Express.js REST APIs** supporting multi-tenant admin, vendor, and customer modules.
+- Implement security and performance safeguards including salted bcrypt password hashing, scoped token-based auth, RBAC permissions, and MongoDB query indexing.
+- Integrate **Razorpay** payment gateway with secure server-side order generation, signature verification, and webhook handling.
+- Collaborate in an Agile environment using Git/GitHub for feature branching, version control, and peer code reviews.
+
+---
+
+## Key Projects
 ### **S-farmart Customer & Partner Apps – Connected Commerce Ecosystem** | *React Native, Expo, Node.js, Express, MongoDB Atlas, Socket.IO, Google Maps, EAS*
-- Developed two connected React Native commerce applications: Customer App (catalog browsing, cart checkout, GPS address selection, live rider tracking) and Partner App (store status, inventory management, live order alerts, fulfillment updates).
-- Implemented robust security and reliability safeguards: bcrypt hashing, token authentication, role validation, rate limiting, atomic stock increments, duplicate checkout prevention, and connection pooling.
-- Verified releases via automated safeguard tests, Expo Doctor dependency audits, and distributed Android builds on Google Play internal testing tracks.
+- Engineered two interconnected React Native applications: **Customer App** (catalog browsing, GPS address pinning, cart checkout, live rider tracking) and **Partner App** (store controls, inventory management, live order alerts, fulfillment updates).
+- Built layered security & reliability safeguards: bcrypt hashing, scoped JWT auth, atomic inventory increments, checkout replay protection, sequential background-aware polling, and connection pooling.
+- Verified builds via automated test suites, Expo Doctor dependency audits, and distributed Android release packages on Google Play internal testing tracks.
+- Repository: [github.com/rajammy1234567-ai/Sfarmart](https://github.com/rajammy1234567-ai/Sfarmart/tree/hardening-capacity)
 
-### **Viz Travels – Tour & Travel Booking Platform** | *React, Node.js, Express, MongoDB, Razorpay*
-- Built and deployed a full-stack tour and travel booking website with a multi-step booking flow.
-- Developed an Admin Panel for managing tours, bookings, and users, and a Vendor Panel for vendors to manage their own listings.
-- Integrated Razorpay payment gateway with secure order creation and signature verification.
-- Designed REST APIs (service-controller-route architecture) with OTP-based authentication and optimized MongoDB schemas.
+### **Viz TV – OTT 4K Video Streaming Mobile Platform** | *React Native, Node.js, Express, MongoDB, Google Play*
+- Developed and published a high-throughput mobile video streaming app on Google Play (built at Viz Digital).
+- Integrated custom media player controls with multi-bitrate streaming, video speed controls, offline downloads caching, and token-based media authorization.
+- Designed low-latency indexed MongoDB schemas for high-concurrency movie recommendations, watchlist curation, and talent hunt video submissions.
 
-### **OTT Streaming App – Backend** | *Node.js, Express, MongoDB*
-- Built the backend and REST APIs for an OTT (video streaming) application, handling user accounts and content data.
-- Implemented authentication and authorization for secure access to streaming content.
-- Designed MongoDB schemas to manage users, content catalog, and subscription-style data efficiently.
+### **Viz Travels (TourWebsite) – Travel Booking Platform** | *React.js, Node.js, Express.js, MongoDB, Razorpay, RBAC*
+- Engineered a full-stack tour booking web platform featuring a multi-step booking flow, Admin Panel for tour lifecycle management, and Vendor Panel for listings.
+- Integrated Razorpay payment gateway with server-side signature verification; built REST APIs with OTP authentication and optimized query indexing.
+- Repository: [github.com/rajammy1234567-ai/TourWebsite](https://github.com/rajammy1234567-ai/TourWebsite)
 
-### **Employee Management System** | *Node.js, Express, MongoDB*
-- Developed a full-stack web application to manage employee records with CRUD operations and role-based access control.
-- Built RESTful APIs for efficient backend communication.
+### **Fluencer App – Influencer & Brand Collaboration Platform** | *React Native, React.js, Node.js, Express, MongoDB, EAS Build*
+- Built a full-stack mobile & web application for influencer campaign management, deal escrow payouts, real-time messaging, and 10-digit mobile OTP authentication.
+- Repository: [github.com/rajammy1234567-ai/Fluencer_App](https://github.com/rajammy1234567-ai/Fluencer_App)
 
 ---
 
 ## Education
-- **Master of Computer Applications (MCA)** | Chandigarh University, Mohali *(2023 – 2025)*
-- **B.Sc. (Hons) Mathematics** | J.N. College, Darbhanga *(2019 – 2023)*
+- **Master of Computer Applications (MCA)** | Chandigarh University, Mohali *(2023 – 2025)* — First Division
+- **B.Sc. (Hons) Mathematics** | J.N. College, Darbhanga *(2019 – 2023)* — Honours
 
 ---
 
-## Achievements
-- Solved 500+ Data Structures and Algorithms problems on LeetCode.
-- Built and uploaded multiple full stack web development projects on GitHub.
+## Achievements & Activities
+- Solved **500+ Data Structures & Algorithms problems** across LeetCode and competitive coding platforms.
+- Production applications published and verified on **Google Play Store** and testing tracks.
+- Architected full-stack open-source platforms and active contributor on GitHub with 8+ deployed repositories.
