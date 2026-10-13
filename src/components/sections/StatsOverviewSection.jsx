@@ -40,7 +40,7 @@ export default function StatsOverviewSection() {
   const stats = [
     { value: 6, suffix: '+', label: 'Months Experience', desc: 'At Viz Digital building full-stack web and mobile apps', color: 'from-emerald-400 to-teal-500' },
     { value: 20, suffix: '+', label: 'Modules & Features', desc: 'Production APIs, admin panels, and payment pipelines', color: 'from-cyan-400 to-blue-500' },
-    { value: 6, suffix: '+', label: 'Deployed Projects', desc: 'React Native, MERN stack, matrimonial & FinTech platforms', color: 'from-indigo-400 to-purple-500' },
+    { value: 8, suffix: '+', label: 'Deployed Projects', desc: 'Connected mobile apps, MERN stack & commerce platforms', color: 'from-indigo-400 to-purple-500' },
     { value: 10, suffix: '+', label: 'Core Technologies', desc: 'React.js, Node.js, Express, MongoDB, React Native & RBAC', color: 'from-amber-400 to-rose-500' }
   ];
 

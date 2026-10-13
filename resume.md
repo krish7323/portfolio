@@ -33,6 +33,11 @@ Web Developer and App Developer with 6+ months of professional experience as a W
 ---
 
 ## Projects
+### **S-farmart Customer & Partner Apps – Connected Commerce Ecosystem** | *React Native, Expo, Node.js, Express, MongoDB Atlas, Socket.IO, Google Maps, EAS*
+- Developed two connected React Native commerce applications: Customer App (catalog browsing, cart checkout, GPS address selection, live rider tracking) and Partner App (store status, inventory management, live order alerts, fulfillment updates).
+- Implemented robust security and reliability safeguards: bcrypt hashing, token authentication, role validation, rate limiting, atomic stock increments, duplicate checkout prevention, and connection pooling.
+- Verified releases via automated safeguard tests, Expo Doctor dependency audits, and distributed Android builds on Google Play internal testing tracks.
+
 ### **Viz Travels – Tour & Travel Booking Platform** | *React, Node.js, Express, MongoDB, Razorpay*
 - Built and deployed a full-stack tour and travel booking website with a multi-step booking flow.
 - Developed an Admin Panel for managing tours, bookings, and users, and a Vendor Panel for vendors to manage their own listings.
